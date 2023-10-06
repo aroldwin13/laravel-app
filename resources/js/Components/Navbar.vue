@@ -1,4 +1,8 @@
 <script setup>
+import { SubmissionIcon } from '@/Components/Icons/outline'
+import { HomeIcon } from '@/Components/Icons/outline'
+
+import SidebarLink from '@/Components/Sidebar/SidebarLink.vue'
 import { onMounted, onUnmounted } from 'vue'
 import { Link } from '@inertiajs/inertia-vue3'
 import { useFullscreen } from '@vueuse/core'
@@ -42,6 +46,26 @@ onUnmounted(() => {
             'translate-y-0': scrolling.up,
         },
     ]">
+    <div class="flex items-center gap-2">
+           
+        <SidebarLink title="Home" :href="route('home')" :active="route().current('home')">
+            <template #icon>
+                <HomeIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </template>
+        </SidebarLink>
+        <div class="flex items-center gap-2">
+           
+            <SidebarLink title="Submission" :href="route('blog')" :active="route().current('blog')">
+                <template #icon>
+                    <SubmissionIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+                </template>
+            </SidebarLink>
+        </div>
+    </div>
+    
+    
+    
+        
         <div class="flex items-center gap-2">
             <Button iconOnly variant="secondary" type="button" @click="toggleDarkMode" v-slot="{ iconSizeClasses }"
                 class="md:hidden" srText="Toggle dark mode">

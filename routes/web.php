@@ -3,6 +3,7 @@
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -34,6 +35,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+    Route::get('/blog', [BlogController::class, 'show'])->middleware(['auth', 'verified'])->name('blog');
+    Route::get('/home', [BlogController::class, 'home'])->middleware(['auth', 'verified'])->name('home');
+
 
 Route::get('/components/buttons', function () {
     return Inertia::render('Components/Buttons');

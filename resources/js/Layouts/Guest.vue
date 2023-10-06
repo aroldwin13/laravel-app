@@ -13,7 +13,12 @@ defineProps({
 <template>
     <Head :title="title" />
 
-    <div class="flex flex-col items-center justify-center min-h-screen gap-4 py-6 bg-gray-100 dark:bg-dark-eval-0">
+    <div class="flex flex-col items-center justify-center min-h-screen gap-4 py-6"
+    :style="{ 
+      backgroundImage: 'url(\'https://upcdn.io/FW25bhR/raw/mmsubg.png\')',
+      backgroundPosition: 'center center',
+      backgroundAttachment: 'fixed'
+    }">
         <div class="flex-shrink-0">
             <Link href="/">
             <ApplicationLogo class="w-20 h-20" />
