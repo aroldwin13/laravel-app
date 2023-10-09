@@ -1,6 +1,6 @@
 <script setup>
-import { SubmissionIcon } from '@/Components/Icons/outline'
-import { HomeIcon } from '@/Components/Icons/outline'
+import { SubmissionIcon, HomeIcon, } from '@/Components/Icons/outline';
+import { ref } from 'vue';
 
 import SidebarLink from '@/Components/Sidebar/SidebarLink.vue'
 import { onMounted, onUnmounted } from 'vue'
@@ -27,6 +27,11 @@ import Dropdown from '@/Components/Dropdown.vue'
 import DropdownLink from '@/Components/DropdownLink.vue'
 import { ArrowsInnerIcon } from '@/Components/Icons/outline'
 
+const showSearchInput = ref(false);
+
+const toggleSearchInput = () => {
+  showSearchInput.value = !showSearchInput.value;
+};
 const { isFullscreen, toggle: toggleFullScreen } = useFullscreen()
 
 onMounted(() => {
@@ -74,6 +79,28 @@ onUnmounted(() => {
             </Button>
         </div>
         <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2">
+                <!-- Search input -->
+                <input
+                  v-if="showSearchInput"
+                  type="text"
+                  placeholder="Search..."
+                  class="border border-gray-300 rounded px-2 py-1"
+                />
+            
+                <!-- Button to toggle search input -->
+                <Button
+                  iconOnly
+                  variant="secondary"
+                  type="button"
+                  v-slot="{ iconSizeClasses }"
+                  @click="toggleSearchInput"
+                  srText="Search"
+                >
+                  <SearchIcon aria-hidden="true" :class="iconSizeClasses" />
+                </Button>
+              </div>
+          
             <Button iconOnly variant="secondary" type="button" @click="toggleDarkMode" v-slot="{ iconSizeClasses }"
                 class="hidden md:inline-flex" srText="Toggle dark mode">
                 <MoonIcon v-show="!isDark" aria-hidden="true" :class="iconSizeClasses" />
@@ -125,9 +152,7 @@ onUnmounted(() => {
             'translate-y-0': scrolling.up,
         },
     ]">
-        <Button iconOnly variant="secondary" type="button" v-slot="{ iconSizeClasses }" srText="Search">
-            <SearchIcon aria-hidden="true" :class="iconSizeClasses" />
-        </Button>
+       
 
         <Link :href="route('dashboard')">
         <ApplicationLogo class="w-10 h-10" />

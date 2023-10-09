@@ -9,7 +9,7 @@ import { TemplateIcon } from '@heroicons/vue/outline'
 
 <template>
     <PerfectScrollbar tagname="nav" aria-label="main" class="relative flex flex-col flex-1 max-h-full gap-4 px-3">
-        <SidebarLink title="Dashboard" :href="route('dashboard')" :active="route().current('dashboard')">
+        <SidebarLink title="Bookmark" :href="route('dashboard')" :active="route().current('dashboard')">
             <template #icon>
                 <DashboardIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </template>
