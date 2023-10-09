@@ -19,11 +19,7 @@ defineProps({
       backgroundPosition: 'center center',
       backgroundAttachment: 'fixed'
     }">
-        <div class="flex-shrink-0">
-            <Link href="/">
-            <ApplicationLogo class="w-20 h-20" />
-            </Link>
-        </div>
+        
 
         <main class="flex items-center flex-1 w-full sm:max-w-md">
             <div class="w-full px-6 py-4 overflow-hidden bg-white shadow-md sm:rounded-lg dark:bg-dark-eval-1">

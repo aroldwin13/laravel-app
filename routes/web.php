@@ -18,7 +18,7 @@ use App\Http\Controllers\ProfileController;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Auth/Login/', [
+    return Inertia::render('Auth/Login', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -36,8 +36,17 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware('auth')->group(function () {
+    Route::get('/blog', [BlogController::class, 'show'])->name('blog');
+    Route::get('/home', [BlogController::class, 'home'])->name('home');
+    Route::get('/bookmark', [BlogController::class, 'bookmark'])->name('bookmark');
+    Route::get('/references', [BlogController::class, 'references'])->name('references');
+});
+
     Route::get('/blog', [BlogController::class, 'show'])->middleware(['auth', 'verified'])->name('blog');
     Route::get('/home', [BlogController::class, 'home'])->middleware(['auth', 'verified'])->name('home');
+    Route::get('/bookmark', [BlogController::class, 'bookmark'])->middleware(['auth', 'verified'])->name('bookmark');
+    Route::get('/references', [BlogController::class, 'references'])->middleware(['auth', 'verified'])->name('references');
 
 
 Route::get('/components/buttons', function () {

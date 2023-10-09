@@ -16,4 +16,13 @@ class BlogController extends Controller
     {
         return Inertia::render('Home');    
     }
+    public function bookmark()
+    {
+        return Inertia::render('Bookmark');    
+    }
+    public function references()
+    {
+        return Inertia::render('References');    
+    }
+
 }

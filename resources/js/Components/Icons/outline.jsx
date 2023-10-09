@@ -131,4 +131,42 @@ export const HomeIcon = defineComponent({
         </svg>
       );
     },
-  })
+  });
+
+  export const BookmarkIcon = defineComponent({
+    setup() {
+      return () => (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-bookmark"
+        >
+          <path d="M5 3V21l7-5 7 5V3"></path>
+        </svg>
+      );
+    },
+  });
+
+  export const ReferencesIcon = defineComponent({
+    setup() {
+      return () => (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-references"
+        >
+          <path d="M5 4V21L12 17L19 21V4L12 8L5 4Z"></path>
+        </svg>
+      );
+    },
+  });
