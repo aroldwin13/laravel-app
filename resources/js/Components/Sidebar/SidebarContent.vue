@@ -10,16 +10,13 @@ import SidebarCollapsibleItem from '@/Components/Sidebar/SidebarCollapsibleItem.
 
 <template>
     <PerfectScrollbar tagname="nav" aria-label="main" class="relative flex flex-col flex-1 max-h-full gap-4 px-3">
-        <SidebarCollapsible title="Bookmark" :active="route().current('bookmark')">
+        <SidebarCollapsible title="Category: AI" :active="route().current('bookmark')">
             <template #icon>
                 <BookmarkIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </template>
+            
 
-            <SidebarCollapsibleItem :href="route('bookmark')" title="http://archives.cpajournal.com/2007/607/essentials/p58.htm"
-                :active="route().current('bookmark')" />
-                <SidebarCollapsibleItem :href="route('bookmark')" title="https://doi.org/10.5590/JOSC.2019.11.1.07"
-                :active="route().current('bookmark')" />
-                <SidebarCollapsibleItem :href="route('bookmark')" title="https://doi.org/10.1080/08941920.2013.861554"
+            <SidebarCollapsibleItem :href="route('bookmark')" title="Title: Research Index and abstracting System"
                 :active="route().current('bookmark')" />
         </SidebarCollapsible>
 

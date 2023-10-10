@@ -19,14 +19,32 @@ defineProps({
       backgroundPosition: 'center center',
       backgroundAttachment: 'fixed'
     }">
-        
 
-        <main class="flex items-center flex-1 w-full sm:max-w-md">
-            <div class="w-full px-6 py-4 overflow-hidden bg-white shadow-md sm:rounded-lg dark:bg-dark-eval-1">
-                <slot />
+    <main class="w-full sm:max-w-md mx-auto">
+        <div class="bg-white rounded-t-lg dark:bg-dark-eval-1 p-4">
+            <div class="flex items-center justify-left">
+                <!-- Logo icon or image -->
+                <Link href="/">
+                    <ApplicationLogo class="w-20 h-20" />
+                </Link>
+    
+                <!-- System name -->
+                <div class="ml-4">
+                    <h1 class="text-2xl font-bold text-gray-800 dark:text-white" style="font-family: Garamond;">
+                        RESEARCH INDEX AND
+                    </h1>
+                    <h1 class="text-2xl font-bold text-gray-800 dark:text-white" style="font-family: Garamond;">
+                        ABSTRACTING SYSTEM
+                    </h1>
+                </div>
             </div>
-        </main>
-
+        </div>
+        <div class="bg-white shadow-md rounded-b-lg dark:bg-dark-eval-1 p-4">
+            <!-- Other content goes here -->
+            <slot />
+        </div>
+    </main>
+    
         <div class="fixed right-10 top-10">
             <Button iconOnly variant="secondary" type="button" @click="toggleDarkMode" v-slot="{ iconSizeClasses }"
                 class="hidden md:inline-flex" srText="Toggle dark mode">

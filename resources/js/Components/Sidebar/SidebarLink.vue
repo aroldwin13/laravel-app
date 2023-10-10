@@ -26,15 +26,15 @@ const Tag = !props.external ? Link : 'a'
 </script>
 
 <template>
-    <component :is="Tag" v-if="href" :href="href" :class="[
+    <component :is="Tag" v-if="href" :href="href" style="border-bottom: 3px solid #ffcd00;" :class="[
         'p-2 flex items-center gap-2 rounded-md transition-colors',
         {
             'text-gray-500 hover:text-gray-700 hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-dark-eval-2':
                 !active,
-            'text-white bg-purple-500 shadow-lg hover:bg-purple-600':
+            'text-white bg-mmsu-color shadow-lg hover:bg-green-600':
                 active,
         },
-    ]">
+    ]" :style="{'border-color': active ? '#ffcd00' : 'transparent'}" >
         <slot name="icon">
             <EmptyCircleIcon aria-hidden="true" class="flex-shrink-0 w-6 h-6" />
         </slot>
@@ -48,7 +48,7 @@ const Tag = !props.external ? Link : 'a'
         {
             'text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-dark-eval-2':
                 !active,
-            'text-white bg-purple-500 shadow-lg hover:bg-purple-600':
+            'text-white bg-mmsu-color shadow-lg hover:bg-green-600':
                 active,
         },
     ]">

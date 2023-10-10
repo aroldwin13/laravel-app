@@ -12,6 +12,8 @@ import { sidebarState } from '@/Composables'
         <Link :href="route('dashboard')" class="inline-flex items-center gap-2">
             <span class="sr-only">K-UI</span>
             <ApplicationLogo aria-hidden="true" class="w-10 h-auto" />
+            <span class="sidebar-text" :class="{ 'hidden': !sidebarState.isOpen }">MMSU Archive System</span>
+
         </Link>
 
         <Button
