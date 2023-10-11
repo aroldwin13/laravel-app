@@ -12,7 +12,7 @@ import { GithubIcon } from '@/Components/Icons/brands'
                     Bookmark page
                 </h2>
 
-                <Button
+                <!-- <Button
                     external
                     variant="black"
                     target="_blank"
@@ -23,7 +23,7 @@ import { GithubIcon } from '@/Components/Icons/brands'
                     <GithubIcon aria-hidden="true" :class="iconSizeClasses" />
 
                     <span>Star on Github</span>
-                </Button>
+                </Button> -->
             </div>
         </template>
 

@@ -45,7 +45,7 @@ const Tag = !props.external ? Link : 'a'
         <slot name="icon">
             <EmptyCircleIcon aria-hidden="true" class="flex-shrink-0 w-6 h-6" />
         </slot>
-        <span class="text-base font-medium" v-show="sidebarState.isOpen || sidebarState.isHovered">
+        <span class="text-base font-medium">
             {{ title }}
         </span>
     </component>

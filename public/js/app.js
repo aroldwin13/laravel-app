@@ -20902,45 +20902,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard.vue?vue&type=script&setup=true&lang=js":
-/*!*********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard.vue?vue&type=script&setup=true&lang=js ***!
-  \*********************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Layouts_Authenticated_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/Authenticated.vue */ "./resources/js/Layouts/Authenticated.vue");
-/* harmony import */ var _Components_Button_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Button.vue */ "./resources/js/Components/Button.vue");
-/* harmony import */ var _Components_Icons_brands__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Icons/brands */ "./resources/js/Components/Icons/brands.jsx");
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  __name: 'Dashboard',
-  setup: function setup(__props, _ref) {
-    var __expose = _ref.expose;
-    __expose();
-    var __returned__ = {
-      AuthenticatedLayout: _Layouts_Authenticated_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-      Button: _Components_Button_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-      get GithubIcon() {
-        return _Components_Icons_brands__WEBPACK_IMPORTED_MODULE_2__.GithubIcon;
-      }
-    };
-    Object.defineProperty(__returned__, '__isScriptSetup', {
-      enumerable: false,
-      value: true
-    });
-    return __returned__;
-  }
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Edit.vue?vue&type=script&setup=true&lang=js":
 /*!****************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Edit.vue?vue&type=script&setup=true&lang=js ***!
@@ -21884,12 +21845,12 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "flex items-center gap-2"
 };
-var _hoisted_2 = {
-  "class": "flex items-center gap-2"
-};
-var _hoisted_3 = {
-  "class": "flex items-center gap-2"
-};
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "sr-only"
+}, "K-UI", -1 /* HOISTED */);
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "sidebar-text text-gray-500"
+}, "MMSU Archive System", -1 /* HOISTED */);
 var _hoisted_4 = {
   "class": "flex items-center gap-2"
 };
@@ -21897,19 +21858,25 @@ var _hoisted_5 = {
   "class": "flex items-center gap-2"
 };
 var _hoisted_6 = {
+  "class": "flex items-center gap-2"
+};
+var _hoisted_7 = {
+  "class": "flex items-center gap-2"
+};
+var _hoisted_8 = {
   key: 0,
   type: "text",
   placeholder: "Search...",
   "class": "border border-gray-300 rounded px-2 py-1"
 };
-var _hoisted_7 = {
+var _hoisted_9 = {
   "class": "inline-flex rounded-md"
 };
-var _hoisted_8 = {
+var _hoisted_10 = {
   type: "button",
   "class": "inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-mmsu-color border border-transparent rounded-md hover:text-green-700 focus:outline-none focus:ring-mmsu-color focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:bg-dark-eval-1 dark:text-gray-400 dark:hover:text-gray-200"
 };
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   "class": "ml-2 -mr-0.5 h-4 w-4",
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 20 20",
@@ -21919,7 +21886,7 @@ var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
   "clip-rule": "evenodd"
 })], -1 /* HOISTED */);
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "sr-only"
 }, "K UI", -1 /* HOISTED */);
 
@@ -21929,11 +21896,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     style: {
       "border-bottom": "3px solid #ffcd00"
     },
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(['sticky top-0 z-10 px-6 py-4 bg-mmsu-color flex items-center justify-between transition-transform duration-500 dark:bg-dark-eval-1', {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(['sticky top-0 z-10 py-4 bg-mmsu-color flex items-center justify-between transition-transform duration-500 dark:bg-dark-eval-1', {
       '-translate-y-full': $setup.scrolling.down,
       'translate-y-0': $setup.scrolling.up
     }])
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SidebarLink"], {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+    href: _ctx.route('login'),
+    "class": "inline-flex items-center gap-2 pl-3"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ApplicationLogo"], {
+        "aria-hidden": "true",
+        "class": "w-10 h-auto"
+      }), _hoisted_3];
+    }),
+    _: 1 /* STABLE */
+  }, 8 /* PROPS */, ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SidebarLink"], {
     title: "Home",
     href: _ctx.route('home'),
     active: _ctx.route().current('home')
@@ -21945,7 +21923,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       })];
     }),
     _: 1 /* STABLE */
-  }, 8 /* PROPS */, ["href", "active"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SidebarLink"], {
+  }, 8 /* PROPS */, ["href", "active"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SidebarLink"], {
     title: "Submission",
     href: _ctx.route('blog'),
     active: _ctx.route().current('blog')
@@ -21957,7 +21935,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       })];
     }),
     _: 1 /* STABLE */
-  }, 8 /* PROPS */, ["href", "active"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
+  }, 8 /* PROPS */, ["href", "active"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
     iconOnly: "",
     variant: "secondary",
     type: "button",
@@ -21976,7 +21954,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, ["class"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.isDark]])];
     }),
     _: 1 /* STABLE */
-  }, 8 /* PROPS */, ["onClick"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Search input "), $setup.showSearchInput ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("input", _hoisted_6)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button to toggle search input "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
+  }, 8 /* PROPS */, ["onClick"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Search input "), $setup.showSearchInput ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("input", _hoisted_8)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button to toggle search input "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
     iconOnly: "",
     variant: "secondary",
     type: "button",
@@ -22034,7 +22012,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     width: "48"
   }, {
     trigger: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.auth.user.name) + " ", 1 /* TEXT */), _hoisted_9])])];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.auth.user.name) + " ", 1 /* TEXT */), _hoisted_11])])];
     }),
     content: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["DropdownLink"], {
@@ -22067,7 +22045,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ApplicationLogo"], {
         "class": "w-10 h-10"
-      }), _hoisted_10];
+      }), _hoisted_12];
     }),
     _: 1 /* STABLE */
   }, 8 /* PROPS */, ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
@@ -22160,7 +22138,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "transition-property": "width, transform",
       "transition-duration": "150ms"
     },
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(['fixed inset-y-0 z-20 py-4 flex flex-col space-y-6 bg-white shadow-lg dark:bg-dark-eval-1', {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(['fixed top-20 z-20 right-0 py-4 flex flex-col space-y-0 bg-white shadow-lg dark:bg-dark-eval-1', {
       'translate-x-0 w-80': $setup.sidebarState.isOpen || $setup.sidebarState.isHovered,
       // Change width to 96 (or any desired value)
       '-translate-x-full w-80 md:w-16 md:translate-x-0': !$setup.sidebarState.isOpen && !$setup.sidebarState.isHovered // Change width to 96 (or any desired value)
@@ -22327,33 +22305,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, null, 8 /* PROPS */, ["href", "active"])];
         }),
         _: 1 /* STABLE */
-      }, 8 /* PROPS */, ["active"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SidebarCollapsible"], {
-        title: "References",
-        active: _ctx.route().current('references')
-      }, {
-        icon: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ReferencesIcon"], {
-            "class": "flex-shrink-0 w-6 h-6",
-            "aria-hidden": "true"
-          })];
-        }),
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SidebarCollapsibleItem"], {
-            href: _ctx.route('references'),
-            title: "Eaton, T. V., & Akers, M. D. (2007). Whistleblowing and good governance. CPA Journal, 77(6), 66–71",
-            active: _ctx.route().current('references')
-          }, null, 8 /* PROPS */, ["href", "active"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SidebarCollapsibleItem"], {
-            href: _ctx.route('references'),
-            title: "Alvarez. E., & Tippins, S. (2019). Socialization agents that Puerto Rican college students use to make financial decisions. Journal of Social Change, 11(1), 75–85",
-            active: _ctx.route().current('references')
-          }, null, 8 /* PROPS */, ["href", "active"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SidebarCollapsibleItem"], {
-            href: _ctx.route('references'),
-            title: "Laplante, J. P., & Nolin, C. (2014). Consultas and socially responsible investing in Guatemala: A case study examining Maya perspectives on the Indigenous right to free, prior, and informed consent. Society & Natural Resources, 27, 231–248",
-            active: _ctx.route().current('references')
-          }, null, 8 /* PROPS */, ["href", "active"])];
-        }),
-        _: 1 /* STABLE */
-      }, 8 /* PROPS */, ["active"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <SidebarLink title=\"Dashboard\" :href=\"route('dashboard')\" :active=\"route().current('dashboard')\">\r\n            <template #icon>\r\n                <DashboardIcon class=\"flex-shrink-0 w-6 h-6\" aria-hidden=\"true\" />\r\n            </template>\r\n        </SidebarLink> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <SidebarCollapsible title=\"Buttons-Templates\" :active=\"route().current('components.*')\">\r\n            <template #icon>\r\n                <TemplateIcon class=\"flex-shrink-0 w-6 h-6\" aria-hidden=\"true\" />\r\n            </template>\r\n\r\n            <SidebarCollapsibleItem :href=\"route('components.buttons')\" title=\"Buttons\"\r\n                :active=\"route().current('components.buttons')\" />\r\n        </SidebarCollapsible> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Examples "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\r\n        => External link example\r\n        <SidebarLink\r\n            title=\"Github\"\r\n            href=\"https://github.com/kamona-wd/kui-laravel-breeze\"\r\n            external\r\n            target=\"_blank\"\r\n        >\r\n        </SidebarLink>\r\n\r\n        => Collapsible examples\r\n        <SidebarCollapsible title=\"Users\" :active=\"$page.url.startsWith('/users')\">\r\n            <SidebarCollapsibleItem :href=\"route('users.index')\" title=\"List\" :active=\"$page.url === '/users/index'\" />\r\n            <SidebarCollapsibleItem :href=\"route('users.create')\" title=\"Create\" :active=\"$page.url === '/users/create'\" />\r\n        </SidebarCollapsible>\r\n\r\n        <SidebarCollapsible title=\"Users\" :active=\"usePage().url.value.startsWith('/users')\">\r\n            <template #icon>\r\n                <UserIcon\r\n                    class=\"flex-shrink-0 w-6 h-6\"\r\n                    aria-hidden=\"true\"\r\n                />\r\n            </template>\r\n\r\n            <SidebarCollapsibleItem :href=\"route('users.index')\" title=\"List\" :active=\"route().current('users.index')\" />\r\n            <SidebarCollapsibleItem :href=\"route('users.create')\" title=\"Create\" :active=\"route().current('users.create')\" />\r\n        </SidebarCollapsible>")];
+      }, 8 /* PROPS */, ["active"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <SidebarCollapsible title=\"References\" :active=\"route().current('references')\">\r\n            <template #icon>\r\n                <ReferencesIcon class=\"flex-shrink-0 w-6 h-6\" aria-hidden=\"true\" />\r\n            </template>\r\n\r\n            <SidebarCollapsibleItem :href=\"route('references')\" title=\"Eaton, T. V., & Akers, M. D. (2007). Whistleblowing and good governance. CPA Journal, 77(6), 66–71\"\r\n                :active=\"route().current('references')\" />\r\n            <SidebarCollapsibleItem :href=\"route('references')\" title=\"Alvarez. E., & Tippins, S. (2019). Socialization agents that Puerto Rican college students use to make financial decisions. Journal of Social Change, 11(1), 75–85\"\r\n                :active=\"route().current('references')\" />\r\n            <SidebarCollapsibleItem :href=\"route('references')\" title=\"Laplante, J. P., & Nolin, C. (2014). Consultas and socially responsible investing in Guatemala: A case study examining Maya perspectives on the Indigenous right to free, prior, and informed consent. Society & Natural Resources, 27, 231–248\"\r\n                :active=\"route().current('references')\" />\r\n        </SidebarCollapsible> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <SidebarLink title=\"Dashboard\" :href=\"route('dashboard')\" :active=\"route().current('dashboard')\">\r\n            <template #icon>\r\n                <DashboardIcon class=\"flex-shrink-0 w-6 h-6\" aria-hidden=\"true\" />\r\n            </template>\r\n        </SidebarLink> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <SidebarCollapsible title=\"Buttons-Templates\" :active=\"route().current('components.*')\">\r\n            <template #icon>\r\n                <TemplateIcon class=\"flex-shrink-0 w-6 h-6\" aria-hidden=\"true\" />\r\n            </template>\r\n\r\n            <SidebarCollapsibleItem :href=\"route('components.buttons')\" title=\"Buttons\"\r\n                :active=\"route().current('components.buttons')\" />\r\n        </SidebarCollapsible> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Examples "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\r\n        => External link example\r\n        <SidebarLink\r\n            title=\"Github\"\r\n            href=\"https://github.com/kamona-wd/kui-laravel-breeze\"\r\n            external\r\n            target=\"_blank\"\r\n        >\r\n        </SidebarLink>\r\n\r\n        => Collapsible examples\r\n        <SidebarCollapsible title=\"Users\" :active=\"$page.url.startsWith('/users')\">\r\n            <SidebarCollapsibleItem :href=\"route('users.index')\" title=\"List\" :active=\"$page.url === '/users/index'\" />\r\n            <SidebarCollapsibleItem :href=\"route('users.create')\" title=\"Create\" :active=\"$page.url === '/users/create'\" />\r\n        </SidebarCollapsible>\r\n\r\n        <SidebarCollapsible title=\"Users\" :active=\"usePage().url.value.startsWith('/users')\">\r\n            <template #icon>\r\n                <UserIcon\r\n                    class=\"flex-shrink-0 w-6 h-6\"\r\n                    aria-hidden=\"true\"\r\n                />\r\n            </template>\r\n\r\n            <SidebarCollapsibleItem :href=\"route('users.index')\" title=\"List\" :active=\"route().current('users.index')\" />\r\n            <SidebarCollapsibleItem :href=\"route('users.create')\" title=\"Create\" :active=\"route().current('users.create')\" />\r\n        </SidebarCollapsible>")];
     }),
     _: 1 /* STABLE */
   });
@@ -22419,51 +22371,8 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "flex items-center justify-between flex-shrink-0 px-3"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "sr-only"
-}, "K-UI", -1 /* HOISTED */);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
-    href: _ctx.route('dashboard'),
-    "class": "inline-flex items-center gap-2"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ApplicationLogo"], {
-        "aria-hidden": "true",
-        "class": "w-10 h-auto"
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-        "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["sidebar-text", {
-          'hidden': !$setup.sidebarState.isOpen
-        }])
-      }, "MMSU Archive System", 2 /* CLASS */)];
-    }),
-
-    _: 1 /* STABLE */
-  }, 8 /* PROPS */, ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
-    iconOnly: "",
-    variant: "secondary",
-    type: "button",
-    onClick: _cache[0] || (_cache[0] = function ($event) {
-      return $setup.sidebarState.isOpen = !$setup.sidebarState.isOpen;
-    }),
-    srText: $setup.sidebarState.isOpen ? 'Close sidebar' : 'Open sidebar'
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function (_ref) {
-      var iconSizeClasses = _ref.iconSizeClasses;
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["MenuFoldLineLeftIcon"], {
-        "aria-hidden": "true",
-        "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(['hidden lg:block', iconSizeClasses])
-      }, null, 8 /* PROPS */, ["class"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.sidebarState.isOpen]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["MenuFoldLineRightIcon"], {
-        "aria-hidden": "true",
-        "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(['hidden lg:block', iconSizeClasses])
-      }, null, 8 /* PROPS */, ["class"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, !$setup.sidebarState.isOpen]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["XIcon"], {
-        "aria-hidden": "true",
-        "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(['lg:hidden', iconSizeClasses])
-      }, null, 8 /* PROPS */, ["class"])];
-    }),
-    _: 1 /* STABLE */
-  }, 8 /* PROPS */, ["srText"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.sidebarState.isOpen || $setup.sidebarState.isHovered]])]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Button\r\n            iconOnly\r\n            variant=\"secondary\"\r\n            type=\"button\"\r\n            v-slot=\"{ iconSizeClasses }\"\r\n            v-show=\"sidebarState.isOpen || sidebarState.isHovered\"\r\n            @click=\"sidebarState.isOpen = !sidebarState.isOpen\"\r\n            :srText=\"sidebarState.isOpen ? 'Close sidebar' : 'Open sidebar'\"\r\n        >\r\n            <MenuFoldLineLeftIcon\r\n                aria-hidden=\"true\"\r\n                v-show=\"sidebarState.isOpen\"\r\n                :class=\"['hidden lg:block', iconSizeClasses]\" />\r\n\r\n            <MenuFoldLineRightIcon\r\n                aria-hidden=\"true\"\r\n                v-show=\"!sidebarState.isOpen\"\r\n                :class=\"['hidden lg:block', iconSizeClasses]\" />\r\n\r\n            <XIcon\r\n                aria-hidden=\"true\"\r\n                :class=\"['lg:hidden', iconSizeClasses]\" />\r\n        </Button> ")]);
 }
 
 /***/ }),
@@ -22481,6 +22390,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _hoisted_1 = {
+  "class": "text-base font-medium"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return $props.href ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)($setup.Tag), {
     key: 0,
@@ -22501,10 +22413,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           "aria-hidden": "true",
           "class": "flex-shrink-0 w-6 h-6"
         })];
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-        "class": "text-base font-medium"
-      }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 513 /* TEXT, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.sidebarState.isOpen || $setup.sidebarState.isHovered]])];
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1 /* TEXT */)];
     }),
+
     _: 3 /* FORWARDED */
   }, 8 /* PROPS */, ["href", "class", "style"])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 1,
@@ -22591,8 +22502,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "transition-duration": "150ms"
     },
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(['min-h-screen flex flex-col', {
-      'lg:ml-80': $setup.sidebarState.isOpen,
-      'md:ml-16': !$setup.sidebarState.isOpen
+      'lg:ml-20': $setup.sidebarState.isOpen
+      //'md:ml-16': !sidebarState.isOpen,
     }])
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Navbar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Navbar"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Heading "), _ctx.$slots.header ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("header", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "header")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])], 2 /* CLASS */)])], 64 /* STABLE_FRAGMENT */);
 }
@@ -23485,14 +23396,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = {
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
-};
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-xl font-semibold leading-tight"
-}, " Bookmark page ", -1 /* HOISTED */);
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Star on Github", -1 /* HOISTED */);
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, " Bookmark page "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Button\r\n                    external\r\n                    variant=\"black\"\r\n                    target=\"_blank\"\r\n                    class=\"items-center max-w-xs gap-2\"\r\n                    v-slot=\"{ iconSizeClasses }\"\r\n                    href=\"https://github.com/kamona-wd/kui-laravel-breeze\"\r\n                >\r\n                    <GithubIcon aria-hidden=\"true\" :class=\"iconSizeClasses\" />\r\n\r\n                    <span>Star on Github</span>\r\n                </Button> ")], -1 /* HOISTED */);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1"
 }, " You are in Bookmark ", -1 /* HOISTED */);
 
@@ -23501,26 +23410,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     title: "Bookmark"
   }, {
     header: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
-        external: "",
-        variant: "black",
-        target: "_blank",
-        "class": "items-center max-w-xs gap-2",
-        href: "https://github.com/kamona-wd/kui-laravel-breeze"
-      }, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function (_ref) {
-          var iconSizeClasses = _ref.iconSizeClasses;
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["GithubIcon"], {
-            "aria-hidden": "true",
-            "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(iconSizeClasses)
-          }, null, 8 /* PROPS */, ["class"]), _hoisted_3];
-        }),
-        _: 1 /* STABLE */
-      })])];
+      return [_hoisted_1];
     }),
-
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_4];
+      return [_hoisted_2];
     }),
     _: 1 /* STABLE */
   });
@@ -23742,62 +23635,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     _: 1 /* STABLE */
   })], 64 /* STABLE_FRAGMENT */);
-}
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard.vue?vue&type=template&id=097ba13b":
-/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard.vue?vue&type=template&id=097ba13b ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   render: () => (/* binding */ render)
-/* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-
-var _hoisted_1 = {
-  "class": "flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
-};
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-  "class": "text-xl font-semibold leading-tight"
-}, " Bookmark page ", -1 /* HOISTED */);
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Star on Github", -1 /* HOISTED */);
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1"
-}, " You are in Bookmark ", -1 /* HOISTED */);
-
-function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["AuthenticatedLayout"], {
-    title: "Bookmark"
-  }, {
-    header: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
-        external: "",
-        variant: "black",
-        target: "_blank",
-        "class": "items-center max-w-xs gap-2",
-        href: "https://github.com/kamona-wd/kui-laravel-breeze"
-      }, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function (_ref) {
-          var iconSizeClasses = _ref.iconSizeClasses;
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["GithubIcon"], {
-            "aria-hidden": "true",
-            "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(iconSizeClasses)
-          }, null, 8 /* PROPS */, ["class"]), _hoisted_3];
-        }),
-        _: 1 /* STABLE */
-      })])];
-    }),
-
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_4];
-    }),
-    _: 1 /* STABLE */
-  });
 }
 
 /***/ }),
@@ -24781,7 +24618,7 @@ __webpack_require__.r(__webpack_exports__);
 var isDark = (0,_vueuse_core__WEBPACK_IMPORTED_MODULE_1__.useDark)();
 var toggleDarkMode = (0,_vueuse_core__WEBPACK_IMPORTED_MODULE_2__.useToggle)(isDark);
 var sidebarState = (0,vue__WEBPACK_IMPORTED_MODULE_0__.reactive)({
-  isOpen: window.innerWidth > 1024,
+  isOpen: window.innerWidth < 1024,
   isHovered: false,
   handleHover: function handleHover(value) {
     if (window.innerWidth < 1024) {
@@ -51040,34 +50877,6 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Dashboard.vue":
-/*!******************************************!*\
-  !*** ./resources/js/Pages/Dashboard.vue ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Dashboard_vue_vue_type_template_id_097ba13b__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Dashboard.vue?vue&type=template&id=097ba13b */ "./resources/js/Pages/Dashboard.vue?vue&type=template&id=097ba13b");
-/* harmony import */ var _Dashboard_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Dashboard.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Pages/Dashboard.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var _node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
-
-
-
-
-;
-const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Dashboard_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Dashboard_vue_vue_type_template_id_097ba13b__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Dashboard.vue"]])
-/* hot reload */
-if (false) {}
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
-
-/***/ }),
-
 /***/ "./resources/js/Pages/Edit.vue":
 /*!*************************************!*\
   !*** ./resources/js/Pages/Edit.vue ***!
@@ -51800,22 +51609,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Dashboard.vue?vue&type=script&setup=true&lang=js":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/Pages/Dashboard.vue?vue&type=script&setup=true&lang=js ***!
-  \*****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Dashboard.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard.vue?vue&type=script&setup=true&lang=js");
- 
-
-/***/ }),
-
 /***/ "./resources/js/Pages/Edit.vue?vue&type=script&setup=true&lang=js":
 /*!************************************************************************!*\
   !*** ./resources/js/Pages/Edit.vue?vue&type=script&setup=true&lang=js ***!
@@ -52472,22 +52265,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Dashboard.vue?vue&type=template&id=097ba13b":
-/*!************************************************************************!*\
-  !*** ./resources/js/Pages/Dashboard.vue?vue&type=template&id=097ba13b ***!
-  \************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_template_id_097ba13b__WEBPACK_IMPORTED_MODULE_0__.render)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_template_id_097ba13b__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Dashboard.vue?vue&type=template&id=097ba13b */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard.vue?vue&type=template&id=097ba13b");
-
-
-/***/ }),
-
 /***/ "./resources/js/Pages/Edit.vue?vue&type=template&id=32485f9a":
 /*!*******************************************************************!*\
   !*** ./resources/js/Pages/Edit.vue?vue&type=template&id=32485f9a ***!
@@ -52887,7 +52664,6 @@ var map = {
 	"./Bookmark.vue": "./resources/js/Pages/Bookmark.vue",
 	"./Components/Buttons.vue": "./resources/js/Pages/Components/Buttons.vue",
 	"./Create.vue": "./resources/js/Pages/Create.vue",
-	"./Dashboard.vue": "./resources/js/Pages/Dashboard.vue",
 	"./Edit.vue": "./resources/js/Pages/Edit.vue",
 	"./Home.vue": "./resources/js/Pages/Home.vue",
 	"./Index.vue": "./resources/js/Pages/Index.vue",

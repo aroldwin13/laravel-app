@@ -20,7 +20,7 @@ import SidebarCollapsibleItem from '@/Components/Sidebar/SidebarCollapsibleItem.
                 :active="route().current('bookmark')" />
         </SidebarCollapsible>
 
-        <SidebarCollapsible title="References" :active="route().current('references')">
+        <!-- <SidebarCollapsible title="References" :active="route().current('references')">
             <template #icon>
                 <ReferencesIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </template>
@@ -31,7 +31,7 @@ import SidebarCollapsibleItem from '@/Components/Sidebar/SidebarCollapsibleItem.
                 :active="route().current('references')" />
             <SidebarCollapsibleItem :href="route('references')" title="Laplante, J. P., & Nolin, C. (2014). Consultas and socially responsible investing in Guatemala: A case study examining Maya perspectives on the Indigenous right to free, prior, and informed consent. Society & Natural Resources, 27, 231–248"
                 :active="route().current('references')" />
-        </SidebarCollapsible>
+        </SidebarCollapsible> -->
 
 
 
