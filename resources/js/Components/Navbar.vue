@@ -52,10 +52,10 @@ onUnmounted(() => {
         },
     ]">
     <div class="flex items-center gap-2">
-        <Link :href="route('login')" class="inline-flex items-center gap-2 pl-3">
+        <Link class="inline-flex items-center gap-2 pl-3">
             <span class="sr-only">K-UI</span>
             <ApplicationLogo aria-hidden="true" class="w-10 h-auto" />
-            <span class="sidebar-text text-gray-500 ">MMSU Archive System</span>
+            <span class="sidebar-text text-white">MMSU Archive System</span>
 
         </Link>
            
@@ -124,7 +124,7 @@ onUnmounted(() => {
                 <template #trigger>
                     <span class="inline-flex rounded-md">
                         <button type="button"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-mmsu-color border border-transparent rounded-md hover:text-green-700 focus:outline-none focus:ring-mmsu-color  focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:bg-dark-eval-1 dark:text-gray-400 dark:hover:text-gray-200">
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-mmsu-color border border-transparent rounded-md hover:text-gray   -500 focus:outline-none focus:ring-mmsu-color  focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:bg-dark-eval-1 dark:text-gray-400 dark:hover:text-gray-200">
                             {{ $page.props.auth.user.name }}
 
                             <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"

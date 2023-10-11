@@ -23,7 +23,7 @@ defineProps({
             :class="[
                 'min-h-screen flex flex-col',
                 {
-                    'lg:ml-20': sidebarState.isOpen,
+                    //'lg:ml-15': sidebarState.isOpen,
                     //'md:ml-16': !sidebarState.isOpen,
                 },
             ]"

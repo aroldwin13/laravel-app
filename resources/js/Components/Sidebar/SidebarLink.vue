@@ -36,8 +36,8 @@ const Tag = !props.external ? Link : 'a'
         :class="[
             'p-2 flex items-center gap-2 rounded-md transition-colors',
             {
-                'text-gray-500 hover:text-gray-700 hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-dark-eval-2': !active,
-                'text-gray-500 bg-mmsu-color shadow-lg hover:bg-gray-100': active,
+                'text-white hover:text-gray-700 hover:bg-gray-500 dark:hover:text-gray-500 dark:hover:bg-dark-eval-2': !active,
+                'text-white bg-mmsu-color shadow-lg hover:bg-gray-500': active,
             },
         ]"
         :style="{'border-color': active ? '#ffcd00' : 'transparent'}"
@@ -57,7 +57,7 @@ const Tag = !props.external ? Link : 'a'
             'p-2 w-full flex items-center gap-2 rounded-md transition-colors',
             {
                 'text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-dark-eval-2': !active,
-                'text-white bg-mmsu-color shadow-lg hover:bg-green-600': active,
+                'text-white bg-mmsu-color shadow-lg hover:bg-gray-500': active,
             },
         ]"
     >
