@@ -36,7 +36,7 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout title="Log in">
+    <GuestLayout title="Archive System">
         <ValidationErrors class="mb-4" />
 
         <div v-if="status" class="mb-4 text-sm font-medium text-green-600">

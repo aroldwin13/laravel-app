@@ -6,6 +6,7 @@ use App\Models\Blog;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use App\Http\Controllers\BlogController;
+use Auth;
 
 
 class BlogController extends Controller
@@ -16,7 +17,15 @@ class BlogController extends Controller
     }
     public function home()
     {
-        return Inertia::render('Home');    
+        // kastuy pinagala jay role
+        $role = Auth::user()->role;
+        if($role == 0){
+            return Inertia::render('Admin');
+        } else if($role == 1){
+            return Inertia::render('Student');
+        }  else if($role == 2){
+            return Inertia::render('Faculty');
+        }  
     }
     public function bookmark()
     {
@@ -25,6 +34,9 @@ class BlogController extends Controller
     public function references()
     {
         return Inertia::render('References');    
+    }
+    public function library(){
+        return Inertia::render('Library');
     }
    
     /**

@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/blog', [BlogController::class, 'show'])->name('blog');
+    Route::get('/blog', [BlogController::class, 'dashboard'])->name('blog');
     Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
     Route::get('/home', [BlogController::class, 'home'])->name('home');
     Route::get('/bookmark', [BlogController::class, 'bookmark'])->name('bookmark');
@@ -58,6 +58,6 @@ Route::post('/update-blogs', [BlogController::class, 'update'])->middleware(['au
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-Route::resource('blogs',BlogController::class);
+Route::resource('blogs', BlogController::class);
 
 require __DIR__ . '/auth.php';

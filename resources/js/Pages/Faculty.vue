@@ -5,11 +5,11 @@ import { GithubIcon } from '@/Components/Icons/brands'
 </script>
 
 <template>
-    <AuthenticatedLayout title="Bookmark">
+    <AuthenticatedLayout title="Faculty">
         <template #header>
             <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <h2 class="text-xl font-semibold leading-tight">
-                    Bookmark page
+                   Welcome Faculty page
                 </h2>
 
                 <Button
@@ -22,13 +22,12 @@ import { GithubIcon } from '@/Components/Icons/brands'
                 >
                     <GithubIcon aria-hidden="true" :class="iconSizeClasses" />
 
-                    <span>Star on Github</span>
+                    <span>Dashboard Faculty</span> 
                 </Button>
             </div>
         </template>
 
         <div class="p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
-            You are in Bookmark
         </div>
     </AuthenticatedLayout>
 </template>
