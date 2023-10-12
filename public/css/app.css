@@ -1256,11 +1256,14 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
+<<<<<<< HEAD
 .bg-blue-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 >>>>>>> 05823a46 (friday finish Product)
 }
+=======
+>>>>>>> 5f90a5ab (paunayen)
 .bg-dark-eval-2 {
   --tw-bg-opacity: 1;
   background-color: rgb(42 47 66 / var(--tw-bg-opacity));

@@ -1,0 +1,9 @@
+[33mdb680930[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{0}: commit: friday fun day
+[33md4503c11[m HEAD@{1}: reset: moving to HEAD^
+[33m51aef7f5[m HEAD@{2}: reset: moving to HEAD^
+[33m05823a46[m HEAD@{3}: Branch: renamed refs/heads/main to refs/heads/main
+[33m05823a46[m HEAD@{5}: Branch: renamed refs/heads/main to refs/heads/main
+[33m05823a46[m HEAD@{7}: commit: friday finish Product
+[33m51aef7f5[m HEAD@{8}: Branch: renamed refs/heads/main to refs/heads/main
+[33m51aef7f5[m HEAD@{10}: commit: overnight commit
+[33md4503c11[m HEAD@{11}: clone: from https://github.com/aroldwin13/laravel-app.git
