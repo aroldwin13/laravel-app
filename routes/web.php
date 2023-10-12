@@ -4,6 +4,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -25,10 +26,11 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -37,27 +39,24 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/blog', [BlogController::class, 'dashboard'])->name('blog');
-    Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
+    Route::get('/submission', [BlogController::class, 'submission'])->name('submission');
+    
     Route::get('/home', [BlogController::class, 'home'])->name('home');
     Route::get('/bookmark', [BlogController::class, 'bookmark'])->name('bookmark');
     Route::get('/references', [BlogController::class, 'references'])->name('references');
 });
 
+Route::middleware('auth')->group(function () {
+    Route::get('/faculty_Home', [FacultyController::class, 'faculty_Home'])->name('faculty_Home');
+    Route::get('/faculty_Bookmark', [FacultyController::class, 'faculty_Bookmark'])->name('faculty_Bookmark');
+    Route::get('/faculty_References', [FacultyController::class, 'faculty_References'])->name('faculty_References');
+});
 
-Route::get('/components/buttons', function () {
-    return Inertia::render('Components/Buttons');
-})->middleware(['auth', 'verified'])->name('components.buttons');
+Route::get('/create', [BlogController::class, 'create'])->middleware(['auth', 'verified'])->name('create');
+Route::post('/store', [BlogController::class, 'store'])->middleware(['auth', 'verified'])->name('store');
+Route::get('/edit', [BlogController::class, 'edit'])->middleware(['auth', 'verified'])->name('edit');
+Route::post('/update', [BlogController::class, 'update'])->middleware(['auth', 'verified'])->name('update');
 
 
-
-
-Route::post('/store-blogs', [BlogController::class, 'store'])->middleware(['auth', 'verified'])->name('blogs.store');
-Route::post('/edit-blogs', [BlogController::class, 'edit'])->middleware(['auth', 'verified'])->name('blogs.edit');
-Route::post('/update-blogs', [BlogController::class, 'update'])->middleware(['auth', 'verified'])->name('blogs.update');
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-Route::resource('blogs', BlogController::class);
 
 require __DIR__ . '/auth.php';

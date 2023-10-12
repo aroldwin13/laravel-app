@@ -8,7 +8,7 @@ import { SubmissionIcon, HomeIcon, } from '@/Components/Icons/outline';
 
 
 const props = defineProps({
-    blogs: {
+    submissions: {
         type: Object,
         default: () => ({}),
     },
@@ -17,7 +17,7 @@ const form = useForm({});
 
 function destroy(id) {
     if (confirm("Are you sure you want to Delete")) {
-        form.delete(route("blogs.destroy", id));
+        form.delete(route("submissions.destroy", id));
     }
 }
 
@@ -38,7 +38,7 @@ function destroy(id) {
       <div class="p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
         <div class="mb-4">
           <button class="bg-mmsu-color rounded-lg">
-          <SidebarLink title="Add Thesis" :href="route('blogs.create')" :active="route().current('blogs.create')">
+          <SidebarLink title="Add Thesis" :href="route('create')" :active="route().current('create')">
             <template #icon>
               <SubmissionIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </template>
@@ -56,13 +56,13 @@ function destroy(id) {
               </tr>
             </thead>
             <tbody>
-              <tr v-for="blog in blogs" :key="blog.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">{{ blog.id }}</td>
-                <td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">{{ blog.title }}</td>
+              <tr v-for="submission in submissions" :key="submission.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">{{ submission.id }}</td>
+                <td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">{{ submission.title }}</td>
                 <td class="px-6 py-4"></td>
                 <td class="px-6 py-4 flex items-center">
                     <Button variant="success">View</Button>
-                    <Button  variant="info"><Link :href="route('blogs.edit', blog.id)">Edit</Link></Button>
+                    <Button  variant="info"><Link :href="route('edit', submission.id)">Edit</Link></Button>
                     <!-- <Button variant="danger" @click="destroy(blog.id)">Delete</Button> -->
                 </td>
               </tr>

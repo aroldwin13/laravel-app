@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog;
-use Inertia\Inertia;
-use Illuminate\Http\Request;
-use App\Http\Controllers\BlogController;
 use Auth;
-
+use Inertia\Inertia;
+use App\Models\Submission;
+use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    public function show()
+      public function show()
     {
-        return Inertia::render('Blog');    
+        return Inertia::render('Submission');    
     }
+ 
     public function home()
     {
         // kastuy pinagala jay role
@@ -27,48 +26,38 @@ class BlogController extends Controller
             return Inertia::render('Faculty');
         }  
     }
+  
+    
+    
     public function bookmark()
     {
         return Inertia::render('Bookmark');    
     }
+    
     public function references()
     {
         return Inertia::render('References');    
     }
-    public function library(){
+    
+    public function library()
+    {
         return Inertia::render('Library');
     }
    
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function blog()
+    public function submission()
     {   
-        $blogs = Blog::all();
+        $submissions = Submission::all();
 
-        return Inertia::render('Blog', [
-            'blogs' => $blogs
+        return Inertia::render('Submission', [
+            'submissions' => $submissions
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return Inertia::render('Create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         // Validate the request data
@@ -77,54 +66,38 @@ class BlogController extends Controller
             'content' => 'required|string',
         ]);
 
-        // Create a new blog entry
-        Blog::create($validatedData);
+     
+        Submission::create($validatedData);
 
-        return redirect()->route('blog')->with('success', 'Blog created successfully!');
+        return redirect()->route('submission')->with('success', 'Submission created successfully!');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Blog  $blog
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Blog $blog)
+    public function edit(Submission $submission)
     {
         return Inertia::render('Edit', [
-            'blog' => $blog
+            'submission' => $submission
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Blog  $blog
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, Submission $submission)
     {
         $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
         ]);
 
-        $blog->update($request->only(['title', 'content']));
+        $submission->update($request->only(['title', 'content']));
 
-        return redirect()->route('blog')->with('message', 'Blog Updated Successfully');
+        // Flash a success message for the next request
+        Session::flash('message', 'Submission Updated Successfully');
+
+        return redirect()->route('submission');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Blog  $blog
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Blog $blog)
-    {
-        $blog->delete();
+//     public function destroy(Submission $submission)
+//     {
+//         Session::flash('message', 'Submission Deleted Successfully');
 
-        return redirect()->route('blog')->with('message', 'Blog Delete Successfully');
-    }
+//         return redirect()->route('submission');
+//     }
 }

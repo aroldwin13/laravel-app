@@ -7,7 +7,7 @@ import InputError from "@/Components/InputError.vue";
 import { Head, useForm } from "@inertiajs/inertia-vue3";
 
 const props = defineProps({
-    blogs: {
+    submissions: {
         type: Object,
         default: () => ({}),
     },
@@ -20,7 +20,7 @@ const form = useForm({
 
 const submit = async () => {
     try {
-        await form.post(route("blogs.store"));
+        await form.post(route("store"));
         // Optionally, you can redirect or perform any actions upon successful submission
         // For example, redirect to a new page:
         // this.$inertia.visit(route('blogs.index'));
@@ -32,7 +32,7 @@ const submit = async () => {
 </script>
 
 <template>
-    <AuthenticatedLayout title="Bookmark">
+    <AuthenticatedLayout title="Submission">
         <template #header>
             <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <h2 class="text-xl font-semibold leading-tight">

@@ -1,6 +1,7 @@
 <script setup>
 import { SubmissionIcon, HomeIcon, } from '@/Components/Icons/outline';
-import { ref } from 'vue';
+import { computed } from 'vue';
+
 
 import SidebarLink from '@/Components/Sidebar/SidebarLink.vue'
 import { onMounted, onUnmounted } from 'vue'
@@ -26,6 +27,8 @@ import ApplicationLogo from '@/Components/ApplicationLogo.vue'
 import Dropdown from '@/Components/Dropdown.vue'
 import DropdownLink from '@/Components/DropdownLink.vue'
 import { ArrowsInnerIcon } from '@/Components/Icons/outline'
+import { ref } from 'vue';
+
 
 const showSearchInput = ref(false);
 
@@ -41,6 +44,12 @@ onMounted(() => {
 onUnmounted(() => {
     document.removeEventListener('scroll', handleScroll)
 })
+
+// const showOption = computed(() => document.cookie.includes('isAdmin=0'));
+
+async function logout() {
+    document.cookie = 'your_cookie_name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+}
 </script>
 
 <template>
@@ -66,7 +75,7 @@ onUnmounted(() => {
         </SidebarLink>
         <div class="flex items-center gap-2">
            
-            <SidebarLink title="Submission" :href="route('blog')" :active="route().current('blog')">
+            <SidebarLink title="Submission" :href="route('submission')" :active="route().current('submission')">
                 <template #icon>
                     <SubmissionIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
                 </template>
@@ -142,7 +151,7 @@ onUnmounted(() => {
                         Profile
                     </DropdownLink>
 
-                    <DropdownLink :href="route('logout')" method="post" as="button">
+                    <DropdownLink @click="logout" :href="route('logout')" method="post" as="button">
                         Log Out
                     </DropdownLink>
                 </template>
