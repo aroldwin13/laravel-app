@@ -8,31 +8,23 @@ import { Head, useForm, } from "@inertiajs/inertia-vue3";
 
 
 const props = defineProps({
-    blog: {
+    submission: {
         type: Object,
         default: () => ({}),
     },
 });
 
 const form = useForm({
-    id: props.blog.id,
-    title: props.blog.title,
-    content: props.blog.content,
+    id: props.submission.id,
+    title: props.submission.title,
+    content: props.submission.content,
 });
 
-const editBlog = () => {
-    // Update form data with the current blog details
-    form.title = props.blog.title;
-    form.content = props.blog.content;
-};
 
 const submit = async () => {
     try {
-        await form.put(route("blogs.update", props.blog.id), {
+        await form.put(route("submissions.update", props.submission.id), {
             onSuccess: () => {
-                // Optionally, you can redirect or perform any actions upon successful submission
-                // For example, redirect to a new page:
-                // this.$inertia.visit(route('blogs.index'));
             },
         });
     } catch (error) {
