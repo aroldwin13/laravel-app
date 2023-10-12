@@ -39,10 +39,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-<<<<<<< HEAD
-    Route::get('/submission', [BlogController::class, 'submission'])->name('submission');
-    
-=======
     Route::get('/submission', [BlogController::class, 'show'])->name('submission');
     Route::get('/submission', [BlogController::class, 'submission'])->name('submission');
     Route::get('/home', [BlogController::class, 'home'])->name('home');
@@ -50,13 +46,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/references', [BlogController::class, 'references'])->name('references');
 });
 
-Route::middleware('auth')->group(function () {
-    Route::get('/submission', [BlogController::class, 'submission'])->name('submission');
->>>>>>> 05823a46 (friday finish Product)
-    Route::get('/home', [BlogController::class, 'home'])->name('home');
-    Route::get('/bookmark', [BlogController::class, 'bookmark'])->name('bookmark');
-    Route::get('/references', [BlogController::class, 'references'])->name('references');
-});
 
 Route::middleware('auth')->group(function () {
     Route::get('/faculty_Home', [FacultyController::class, 'faculty_Home'])->name('faculty_Home');
@@ -64,15 +53,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/faculty_References', [FacultyController::class, 'faculty_References'])->name('faculty_References');
 });
 
-<<<<<<< HEAD
-Route::get('/create', [BlogController::class, 'create'])->middleware(['auth', 'verified'])->name('create');
-Route::post('/store', [BlogController::class, 'store'])->middleware(['auth', 'verified'])->name('store');
-Route::get('/edit', [BlogController::class, 'edit'])->middleware(['auth', 'verified'])->name('edit');
-Route::post('/update', [BlogController::class, 'update'])->middleware(['auth', 'verified'])->name('update');
 
-
-
-=======
 Route::middleware('auth')->group(function () {
 Route::get('/create-submissions', [BlogController::class, 'create'])->name('submissions.create');
 Route::post('/store-blogs', [BlogController::class, 'store'])->name('submissions.store');
@@ -80,5 +61,4 @@ Route::get('/edit-blogs', [BlogController::class, 'edit'])->name('submissions.ed
 Route::put('/update-blogs', [BlogController::class, 'update'])->name('submissions.update');
 Route::resource('submissions',BlogController::class);
 });
->>>>>>> 05823a46 (friday finish Product)
 require __DIR__ . '/auth.php';

@@ -20,11 +20,8 @@ const form = useForm({
 
 const submit = async () => {
     try {
-<<<<<<< HEAD
-        await form.post(route("store"));
-=======
         await form.post(route("submissions.store"));
->>>>>>> 05823a46 (friday finish Product)
+
         // Optionally, you can redirect or perform any actions upon successful submission
         // For example, redirect to a new page:
         // this.$inertia.visit(route('blogs.index'));
