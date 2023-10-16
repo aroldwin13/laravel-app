@@ -60,32 +60,31 @@ async function logout() {
             'translate-y-0': scrolling.up,
         },
     ]">
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-20">
         <Link class="inline-flex items-center gap-2 pl-3">
             <span class="sr-only">K-UI</span>
             <ApplicationLogo aria-hidden="true" class="w-10 h-auto" />
             <span class="sidebar-text text-white">MMSU Archive System</span>
 
         </Link>
-           
-        <SidebarLink title="Home" :href="route('home')" :active="route().current('home')">
-            <template #icon>
-                <HomeIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-            </template>
-        </SidebarLink>
-        <div class="flex items-center gap-2">
-           
-            <SidebarLink title="Submission" :href="route('submission')" :active="route().current('submission')">
+    
+        <div class="flex items-center gap-2">  
+            <div>
+            <SidebarLink title="Home" :href="route('home')" :active="route().current('home')">
                 <template #icon>
-                    <SubmissionIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+                    <HomeIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
                 </template>
             </SidebarLink>
+            </div>
+            <div v-if="$page.props.auth.user.role == 0 || $page.props.auth.user.role == 1  ">
+                <SidebarLink title="Submission" :href="route('submission')" :active="route().current('submission')">
+                    <template #icon>
+                        <SubmissionIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+                    </template>
+                </SidebarLink>
+            </div>
         </div>
     </div>
-    
-    
-    
-        
         <div class="flex items-center gap-2">
             <Button iconOnly variant="secondary" type="button" @click="toggleDarkMode" v-slot="{ iconSizeClasses }"
                 class="md:hidden" srText="Toggle dark mode">

@@ -810,6 +810,14 @@ select {
   top: 0px;
   bottom: 0px;
 }
+.inset-y-40 {
+  top: 10rem;
+  bottom: 10rem;
+}
+.inset-y-4 {
+  top: 1rem;
+  bottom: 1rem;
+}
 .bottom-0 {
   bottom: 0px;
 }
@@ -839,6 +847,21 @@ select {
 }
 .top-20 {
   top: 5rem;
+}
+.bottom-1 {
+  bottom: 0.25rem;
+}
+.bottom-20 {
+  bottom: 5rem;
+}
+.top-80 {
+  top: 20rem;
+}
+.top-40 {
+  top: 10rem;
+}
+.top-3 {
+  top: 0.75rem;
 }
 .z-0 {
   z-index: 0;
@@ -913,6 +936,9 @@ select {
 }
 .mr-2 {
   margin-right: 0.5rem;
+}
+.mt-0 {
+  margin-top: 0px;
 }
 .mt-1 {
   margin-top: 0.25rem;
@@ -1159,6 +1185,18 @@ select {
 .gap-6 {
   gap: 1.5rem;
 }
+.gap-40 {
+  gap: 10rem;
+}
+.gap-3 {
+  gap: 0.75rem;
+}
+.gap-0 {
+  gap: 0px;
+}
+.gap-20 {
+  gap: 5rem;
+}
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
@@ -1173,6 +1211,11 @@ select {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+.space-y-40 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(10rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(10rem * var(--tw-space-y-reverse));
 }
 .overflow-hidden {
   overflow: hidden;
@@ -1219,6 +1262,9 @@ select {
 }
 .border-b {
   border-bottom-width: 1px;
+}
+.border-r {
+  border-right-width: 1px;
 }
 .border-t {
   border-top-width: 1px;
@@ -1446,6 +1492,9 @@ select {
 }
 .leading-tight {
   line-height: 1.25;
+}
+.tracking-wider {
+  letter-spacing: 0.05em;
 }
 .text-blue-500 {
   --tw-text-opacity: 1;
@@ -1830,6 +1879,11 @@ select {
   border-color: rgb(134 239 172 / var(--tw-border-opacity));
 }
 
+.focus\:border-indigo-500:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(99 102 241 / var(--tw-border-opacity));
+}
+
 .focus\:bg-gray-100:focus {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -2193,6 +2247,11 @@ select {
 
   .sm\:text-right {
     text-align: right;
+  }
+
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 

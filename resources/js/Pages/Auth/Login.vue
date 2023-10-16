@@ -1,6 +1,6 @@
 <script setup>
 import { Link, useForm } from '@inertiajs/inertia-vue3'
-import { MailIcon, LockClosedIcon, LoginIcon } from '@heroicons/vue/outline'
+import { MailIcon, LockClosedIcon } from '@heroicons/vue/outline'
 import InputIconWrapper from '@/Components/InputIconWrapper.vue'
 import Button from '@/Components/Button.vue'
 import Checkbox from '@/Components/Checkbox.vue'
@@ -9,6 +9,7 @@ import Input from '@/Components/Input.vue'
 import Label from '@/Components/Label.vue'
 import ValidationErrors from '@/Components/ValidationErrors.vue'
 import { Inertia } from '@inertiajs/inertia';
+import { MyCustomLoginIcon } from '@/Components/Icons/outline';
 
 defineProps({
     canResetPassword: Boolean,
@@ -81,16 +82,16 @@ const submit = () => {
 
                 <div>
                     <Button class="justify-center w-full gap-2" :disabled="form.processing" v-slot="{ iconSizeClasses }">
-                        <LoginIcon aria-hidden="true" :class="iconSizeClasses" />
                         <span>Log in</span>
+                            <MyCustomLoginIcon aria-hidden="true" :class="iconSizeClasses" />
                     </Button>
                 </div>
                 
                 <p class="text-sm text-gray-600 dark:text-gray-400">
-                    Don't have an account?
+                    <!-- Don't have an account?
                     <Link :href="route('register')" class="text-blue-500 hover:underline">
                     Register
-                    </Link>
+                    </Link> -->
                 </p>
             </div>
         </form>

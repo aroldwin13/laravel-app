@@ -1,8 +1,8 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/Authenticated.vue';
 import Button from '@/Components/Button.vue';
-import { GithubIcon } from '@/Components/Icons/brands';
-import { Head, Link, useForm } from "@inertiajs/inertia-vue3";
+
+import { Link, useForm } from "@inertiajs/inertia-vue3";
 import SidebarLink from '@/Components/Sidebar/SidebarLink.vue';
 import { SubmissionIcon, HomeIcon, } from '@/Components/Icons/outline';
 
@@ -13,9 +13,8 @@ const props = defineProps({
   },
 });
 
-const sortedSubmissions = props.submissions.slice().sort((a, b) => a.id - b.id);
-
 const form = useForm({});
+
 
 function destroy(id) {
   if (confirm("Are you sure you want to Delete")) {
@@ -23,8 +22,6 @@ function destroy(id) {
   }
 }
 </script>
-
-
 
 <template>
   <AuthenticatedLayout title="Submission">
@@ -60,7 +57,7 @@ function destroy(id) {
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(submission, index) in sortedSubmissions" :key="submission.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <tr v-for="(submission, index) in props.submissions" :key="submission.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
               <td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">{{ index + 1 }}</td>
               <td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">{{ submission.title }}</td>
               <td class="px-6 py-4"></td>
@@ -69,7 +66,7 @@ function destroy(id) {
                 <Button variant="info">
                   <Link :href="route('submissions.edit', submission.id)">Edit</Link>
                 </Button>
-                <!-- <Button variant="danger" @click="destroy(blog.id)">Delete</Button> -->
+                <Button  variant="danger" @click="destroy(submission.id)">Delete</Button>
               </td>
             </tr>
           </tbody>
@@ -78,4 +75,3 @@ function destroy(id) {
     </div>
   </AuthenticatedLayout>
 </template>
->>>>>>> 05823a46 (friday finish Product)

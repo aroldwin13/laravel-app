@@ -56,9 +56,9 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function () {
 Route::get('/create-submissions', [BlogController::class, 'create'])->name('submissions.create');
-Route::post('/store-blogs', [BlogController::class, 'store'])->name('submissions.store');
-Route::get('/edit-blogs', [BlogController::class, 'edit'])->name('submissions.edit');
-Route::put('/update-blogs', [BlogController::class, 'update'])->name('submissions.update');
+Route::post('/store-submissions', [BlogController::class, 'store'])->name('submissions.store');
+Route::get('/edit-submissions', [BlogController::class, 'edit'])->name('submissions.edit');
+Route::put('/update-submissions', [BlogController::class, 'update'])->name('submissions.update');
 Route::resource('submissions',BlogController::class);
 });
 require __DIR__ . '/auth.php';

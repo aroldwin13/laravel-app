@@ -22,11 +22,17 @@ class BlogController extends Controller
         // kastuy pinagala jay role
         $role = Auth::user()->role;
         if($role == 0){
-            return Inertia::render('Admin');
+            return Inertia::render('Admin', [
+                'role' => $role
+            ]);
         } else if($role == 1){
-            return Inertia::render('Student');
+            return Inertia::render('Student', [
+                'role' => $role
+            ]);
         }  else if($role == 2){
-            return Inertia::render('Faculty');
+            return Inertia::render('Faculty', [
+                'role' => $role
+            ]);
         }  
     }
 
@@ -65,7 +71,7 @@ class BlogController extends Controller
         // Validate the request data
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
-            'content' => 'required|string',
+            'shortabs' => 'required|string',
         ]);
      
         Submission::create($validatedData);
@@ -86,10 +92,10 @@ class BlogController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'content' => 'required|string',
+            'shortabs' => 'required|string',
         ]);
 
-        $submission->update($request->only(['title', 'content']));
+        $submission->update($request->only(['title', 'shortabs']));
 
         return redirect()->route('submission')->with('message', 'Submission Updated Successfully');
     }

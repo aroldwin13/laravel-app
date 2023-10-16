@@ -12,6 +12,6 @@ class Submission extends Model
 
     protected $fillable = [
         'title',
-        'content'
+        'shortabs'
     ];
 }

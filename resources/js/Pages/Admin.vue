@@ -2,6 +2,7 @@
 import AuthenticatedLayout from '@/Layouts/Authenticated.vue'
 import Button from '@/Components/Button.vue'
 import { GithubIcon } from '@/Components/Icons/brands'
+
 </script>
 
 <template>
@@ -12,7 +13,7 @@ import { GithubIcon } from '@/Components/Icons/brands'
                     Welcome Admin Page
                 </h2>
 
-                <Button
+                <!-- <Button
                     external
                     variant="black"
                     target="_blank"
@@ -23,7 +24,7 @@ import { GithubIcon } from '@/Components/Icons/brands'
                     <GithubIcon aria-hidden="true" :class="iconSizeClasses" />
 
                     <span>Admin Dashboard</span> 
-                </Button>
+                </Button> -->
             </div>
         </template>
 
