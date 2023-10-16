@@ -1,8 +1,5 @@
 <script setup>
 import { SubmissionIcon, HomeIcon, AssessmentIcon, GenerateIcon, AccountIcon} from '@/Components/Icons/outline';
-import { computed } from 'vue';
-
-
 import SidebarLink from '@/Components/Sidebar/SidebarLink.vue'
 import { onMounted, onUnmounted } from 'vue'
 import { Link } from '@inertiajs/inertia-vue3'

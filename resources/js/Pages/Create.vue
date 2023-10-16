@@ -4,6 +4,7 @@ import TextInput from "@/Components/Input.vue";
 import PrimaryButton from "@/Components/Button.vue";
 import Label from "@/Components/Label.vue";
 import InputError from "@/Components/InputError.vue";
+
 import { Head, useForm } from "@inertiajs/inertia-vue3";
 
 const props = defineProps({
@@ -55,78 +56,100 @@ const submit = async () => {
         </template>
 
         <div class="p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
-           
-             
+                   <div class="p-6 bg-white border-b border-gray-200">
+                <form @submit.prevent="submit">
+                    <div class="grid grid-cols-2 gap-2">
+                        <!-- Title formv and Adviser -->
+                        <div class="mt-4">
+                            <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                            <input id="title" type="text" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm" v-model="form.title">
+                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.title">{{ form.errors.title }}</p>
+                        </div>
+                        <div class="mt-4">
+                            <label for="adviser" class="block text-sm font-medium text-gray-700">Adviser</label>
+                            <input id="adviser" type="text" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"  v-model="form.adviser">
+                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.adviser">{{ form.errors.adviser }}</p>
+                        </div>
+                        
+                    
+                        <!-- Author and College form -->
+
+                        <div class="mt-4">
+                            <label for="authors" class="block text-sm font-medium text-gray-700">Authors</label>
+                            <input id="authors" type="text" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm" v-model="form.author" >
+                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.authors">{{ form.errors.authors }}</p>
+                        </div>
                 
-                        <div class="p-6 bg-white border-b border-gray-200">
-                            <form @submit.prevent="submit">
-                                <div class="grid grid-cols-1 gap-4">
-                                    <!-- Title form -->
-                                    <div class="m1-4">
-                                        <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
-                                        <input id="title" type="text" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" v-model="form.title" style="width: 645px;">
-                                        <p class="mt-1 text-sm text-red-600" v-if="form.errors.title">{{ form.errors.title }}</p>
-                                    </div>
-                                
-                                    <!-- Author and College form -->
-                                    <div class="grid grid-cols-4 gap-4">
-                                        <div class="mt-1">
-                                            <label for="authors" class="block text-sm font-medium text-gray-700">Authors</label>
-                                            <input id="authors" type="text" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" v-model="form.author" style="width: 300px;">
-                                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.authors">{{ form.errors.authors }}</p>
-                                        </div>
-                                
-                                        <div class="mt-1">
-                                            <label for="college" class="block text-sm font-medium text-gray-700">College</label>
-                                            <input id="college" type="text" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus-border-indigo-500 sm:text-sm" v-model="form.college" style="width: 300px;">
-                                            <p class="mt-0 text-sm text-red-600" v-if="form.errors.college">{{ form.errors.college }}</p>
-                                        </div>
-                                    </div>
-                                
-                                    <!-- Adviser and Department form -->
-                                    <div class="grid grid-cols-4 gap-4">
-                                        <div class="mt-1">
-                                            <label for="adviser" class="block text-sm font-medium text-gray-700">Adviser</label>
-                                            <input id="adviser" type="text" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus-border-indigo-500 sm:text-sm" v-model="form.adviser" style="width: 300px;">
-                                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.adviser">{{ form.errors.adviser }}</p>
-                                        </div>
-                                
-                                        <div class="mt-1">
-                                            <label for="department" class="block text-sm font-medium text-gray-700">Department</label>
-                                            <input id="department" type="text" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus-border-indigo-500 sm:text-sm" v-model="form.department" style="width: 300px;">
-                                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.department">{{ form.errors.department }}</p>
-                                        </div>
-                                    </div>
-                                
-                                    <!-- References and Keywords form -->
-                                    <div class="grid grid-cols-4 gap-4">
-                                        <div class="mt-1">
-                                            <label for="references" class="block text-sm font-medium text-gray-700">References</label>
-                                            <textarea id="references" v-model="form.references" class="w-full border border-gray-300 rounded-lg focus:ring-blue-500 focus-border-blue-500 text-gray-900 text-sm" style="width: 300px; height: 100px;"></textarea>
-                                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.references">{{ form.errors.references }}</p>
-                                        </div>
-                                
-                                        <div class="mt-1">
-                                            <label for="keywords" class="block text-sm font-medium text-gray-700">Keywords</label>
-                                            <textarea id="keywords" v-model="form.keywords" class="w-full border border-gray-300 rounded-lg focus:ring-blue-500 focus-border-blue-500 text-gray-900 text-sm" style="width: 300px; height: 100px;"></textarea>
-                                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.keywords">{{ form.errors.keywords }}</p>
-                                        </div>
-                                    </div>
-                                
-                                    <!-- Short Abstract form -->
-                                    <div class="mt-1">
-                                        <label for="shortabs" class="block text-sm font-medium text-gray-700">Short Abstract</label>
-                                        <textarea id="shortabs" v-model="form.shortabs" class="w-full border border-gray-300 rounded-lg focus:ring-blue-500 focus-border-blue-500 text-gray-900 text-sm" style="width: 645px; height: 300px;"></textarea>
-                                        <p class="mt-1 text-sm text-red-600" v-if="form.errors.shortabs">{{ form.errors.shortabs }}</p>
-                                    </div>
-                                </div>  
-                                
-                                    <!-- Submit form button -->
-                                    <PrimaryButton type="submit" style="color: white;" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                                        Submit
-                                    </PrimaryButton>
-                            </form>
+                        <div class="mt-4">
+                            <label for="college" class="block text-sm font-medium text-gray-700">College</label>
+                            <input id="college" type="text" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm" v-model="form.college">
+                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.college">{{ form.errors.college }}</p>
+                        </div>
+                    
+                    
+                        <!-- Citation and Department form -->
+                        <div class="mt-4">
+                            <label for="department" class="block text-sm font-medium text-gray-700">Department</label>
+                            <input id="department" type="text" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm" v-model="form.department">
+                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.department">{{ form.errors.department }}</p>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <label for="citation" class="block text-sm font-medium text-gray-700">Citation</label>
+                            <textarea id="citation" v-model="form.citation" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"></textarea>
+                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.citation">{{ form.errors.citation }}</p>
+                        </div>
+
+                    
+                        <!-- References and Keywords form -->
+                        <div class="mt-4">
+                            <label for="references" class="block text-sm font-medium text-gray-700">References</label>
+                            <textarea id="references" v-model="form.references" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"></textarea>
+                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.references">{{ form.errors.references }}</p>
+                        </div>
+                
+                        <div class="mt-4">
+                            <label for="keywords" class="block text-sm font-medium text-gray-700">Keywords</label>
+                            <textarea id="keywords" v-model="form.keywords" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"></textarea>
+                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.keywords">{{ form.errors.keywords }}</p>
+                        </div>
+
+                    
+                    
+                    </div> 
+                        <!-- Short Abstract form -->
+                        <div class="mt-4">
+                            <label for="shortabs" class="block text-sm font-medium text-gray-700">Short Abstract</label>
+                            <ckeditor :editor="editor" v-model="form.shortabs" :config="editorConfig" id="shortabs" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"></ckeditor>
+                            <!-- <textarea id="shortabs" v-model="form.shortabs" class="w-full border border-gray-300 rounded-lg focus:ring-blue-500 focus-border-blue-500 text-gray-900 text-sm" style="width: 645px; height: 300px;"></textarea> -->
+                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.shortabs">{{ form.errors.shortabs }}</p>
                         </div> 
+                    <br>
+                        <!-- Submit form button -->
+                        <PrimaryButton type="submit" style="color: white;" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                            Submit
+                        </PrimaryButton>
+                </form>
+            </div> 
         </div>
     </AuthenticatedLayout>
 </template>
+
+
+<script>
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+export default {
+    name: 'app',
+    component: { ClassicEditor },
+    data() {
+        return {
+            editor: ClassicEditor,
+            editorData: '<p>Content of the editor.</p>',
+            editorConfig: {
+                // The configuration of the editor.
+            }
+        };
+    }
+}
+</script>

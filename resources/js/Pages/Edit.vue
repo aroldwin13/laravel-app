@@ -64,9 +64,9 @@ const submit = async () => {
                                 <div class="my-6">
                                     <label for="slug"
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Short Abstract</label>
-                                    <textarea type="text" v-model="form.shortabs" name="shortabs" id=""
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" style="width: 300px; height: 100px;"></textarea>
-    
+                                    <!-- <textarea type="text" v-model="form.shortabs" name="shortabs" id="" -->
+                                        <!-- class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" style="width: 300px; height: 100px;"></textarea> -->
+                                    <ckeditor :editor="editor" v-model="form.shortabs" :config="editorConfig" id="shortabs" name="shortabs"></ckeditor>
                                     <div v-if="form.errors.shortabs" class="text-sm text-red-600">
                                         {{ form.errors.shortabs }}
                                     </div>
@@ -83,3 +83,21 @@ const submit = async () => {
 
     </AuthenticatedLayout>
   </template>
+
+  <script>
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+export default {
+    name: 'app',
+    component: { ClassicEditor },
+    data() {
+        return {
+            editor: ClassicEditor,
+            editorData: '<p>Content of the editor.</p>',
+            editorConfig: {
+                // The configuration of the editor.
+            }
+        };
+    }
+}
+</script>

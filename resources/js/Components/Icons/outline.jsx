@@ -174,17 +174,7 @@ export const HomeIcon = defineComponent({
   export const MyCustomLoginIcon = defineComponent({
     setup() {
       return () => (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M4 12H16M11 7L16 12 11 17" />
-        </svg>
+        <img src="http://127.0.0.1:8000/images/login.png" alt="" />
       );
     },
   });
@@ -192,7 +182,7 @@ export const HomeIcon = defineComponent({
   export const AssessmentIcon = defineComponent({
     setup() {
       return () => (
-        <img src="images/assessmentw.png" alt="" />
+        <img src="http://127.0.0.1:8000/images/assessmentw.png" alt="" />
       );
     },
   });
@@ -200,7 +190,7 @@ export const HomeIcon = defineComponent({
   export const GenerateIcon = defineComponent({
     setup() {
       return () => (
-        <img src="images/generatew.png" alt="" />
+        <img src="http://127.0.0.1:8000/images/generatew.png" alt="" />
       );
     },
   });
@@ -208,7 +198,7 @@ export const HomeIcon = defineComponent({
   export const AccountIcon = defineComponent({
     setup() {
       return () => (
-        <img src="images/accountw.png" alt="" />
+        <img src="http://127.0.0.1:8000/images/accountw.png" alt="Account Icon" />
       );
     },
   });

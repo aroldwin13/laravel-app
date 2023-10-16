@@ -11,13 +11,14 @@ import { GithubIcon } from '@/Components/Icons/brands'
                 <h2 class="text-xl font-semibold leading-tight">
                     You are in Home
                 </h2>
-
-                
             </div>
         </template>
 
         <div class="p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
             Welcome Home
         </div>
+        
+
+
     </AuthenticatedLayout>
 </template>
