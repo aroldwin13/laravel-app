@@ -5,11 +5,11 @@ import { GithubIcon } from '@/Components/Icons/brands'
 </script>
 
 <template>
-    <AuthenticatedLayout title="Home">
+    <AuthenticatedLayout title="Account">
         <template #header>
             <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <h2 class="text-xl font-semibold leading-tight">
-                    You are in Home
+                    You are in Account
                 </h2>
 
                 
@@ -17,7 +17,7 @@ import { GithubIcon } from '@/Components/Icons/brands'
         </template>
 
         <div class="p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
-            Welcome Home
+            Welcome Account
         </div>
     </AuthenticatedLayout>
 </template>

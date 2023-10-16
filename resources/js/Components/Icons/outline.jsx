@@ -188,3 +188,27 @@ export const HomeIcon = defineComponent({
       );
     },
   });
+
+  export const AssessmentIcon = defineComponent({
+    setup() {
+      return () => (
+        <img src="images/assessmentw.png" alt="" />
+      );
+    },
+  });
+
+  export const GenerateIcon = defineComponent({
+    setup() {
+      return () => (
+        <img src="images/generatew.png" alt="" />
+      );
+    },
+  });
+  
+  export const AccountIcon = defineComponent({
+    setup() {
+      return () => (
+        <img src="images/accountw.png" alt="" />
+      );
+    },
+  });

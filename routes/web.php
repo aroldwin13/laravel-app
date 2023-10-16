@@ -44,8 +44,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', [BlogController::class, 'home'])->name('home');
     Route::get('/bookmark', [BlogController::class, 'bookmark'])->name('bookmark');
     Route::get('/references', [BlogController::class, 'references'])->name('references');
+    Route::get('/generate', [BlogController::class, 'generate'])->name('generate');
+    Route::get('/assessment', [BlogController::class, 'assessment'])->name('assessment');
+    Route::get('/account', [BlogController::class, 'account'])->name('account');
 });
-
+Route::get('/editor', [BlogController::class, 'editor'])->name('editor');
 
 Route::middleware('auth')->group(function () {
     Route::get('/faculty_Home', [FacultyController::class, 'faculty_Home'])->name('faculty_Home');
@@ -61,4 +64,5 @@ Route::get('/edit-submissions', [BlogController::class, 'edit'])->name('submissi
 Route::put('/update-submissions', [BlogController::class, 'update'])->name('submissions.update');
 Route::resource('submissions',BlogController::class);
 });
+
 require __DIR__ . '/auth.php';

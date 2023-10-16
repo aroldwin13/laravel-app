@@ -1,5 +1,5 @@
 <script setup>
-import { SubmissionIcon, HomeIcon, } from '@/Components/Icons/outline';
+import { SubmissionIcon, HomeIcon, AssessmentIcon, GenerateIcon, AccountIcon} from '@/Components/Icons/outline';
 import { computed } from 'vue';
 
 
@@ -76,10 +76,31 @@ async function logout() {
                 </template>
             </SidebarLink>
             </div>
-            <div v-if="$page.props.auth.user.role == 0 || $page.props.auth.user.role == 1  ">
+            <div v-if="$page.props.auth.user.role == 'admin' || $page.props.auth.user.role == 'student'">
                 <SidebarLink title="Submission" :href="route('submission')" :active="route().current('submission')">
                     <template #icon>
                         <SubmissionIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+                    </template>
+                </SidebarLink>
+            </div>
+            <div v-if="$page.props.auth.user.role == 'admin' || $page.props.auth.user.role == 'coordinator'">
+                <SidebarLink title="Assessment" :href="route('assessment')" :active="route().current('assessment')">
+                    <template #icon>
+                        <AssessmentIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+                    </template>
+                </SidebarLink>
+            </div>
+            <div v-if="$page.props.auth.user.role == 'admin' || $page.props.auth.user.role == 'librarian'">
+                <SidebarLink title="Generate Report" :href="route('generate')" :active="route().current('generate')">
+                    <template #icon>
+                        <GenerateIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+                    </template>
+                </SidebarLink>
+            </div>
+            <div v-if="$page.props.auth.user.role == 'admin' ">
+                <SidebarLink title="Account" :href="route('account')" :active="route().current('account')">
+                    <template #icon>
+                        <AccountIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
                     </template>
                 </SidebarLink>
             </div>
@@ -133,7 +154,7 @@ async function logout() {
                     <span class="inline-flex rounded-md">
                         <button type="button"
                             class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-mmsu-color border border-transparent rounded-md hover:text-gray   -500 focus:outline-none focus:ring-mmsu-color  focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:bg-dark-eval-1 dark:text-gray-400 dark:hover:text-gray-200">
-                            {{ $page.props.auth.user.name }}
+                            {{ $page.props.auth.user.firstname }}
 
                             <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                 fill="currentColor">

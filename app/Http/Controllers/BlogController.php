@@ -16,24 +16,51 @@ class BlogController extends Controller
     {
         return Inertia::render('Submission');    
     }
+    public function editor(){
+        return Inertia::render('Editor');
+    }
+    public function assessment()
+    {
+        return Inertia::render('Assessment');    
+    }
+
+    public function generate()
+    {
+        return Inertia::render('Generate');    
+    }
+
+    public function account()
+    {
+        return Inertia::render('Account');    
+    }
  
     public function home()
     {
         // kastuy pinagala jay role
+        
         $role = Auth::user()->role;
-        if($role == 0){
+        if($role == 'admin'){
             return Inertia::render('Admin', [
                 'role' => $role
             ]);
-        } else if($role == 1){
+        } else if($role == 'student'){
             return Inertia::render('Student', [
                 'role' => $role
             ]);
-        }  else if($role == 2){
+        }  else if($role == 'faculty'){
             return Inertia::render('Faculty', [
                 'role' => $role
             ]);
-        }  
+        }   
+            else if($role == 'librarian'){
+                return Inertia::render('Librarian', [
+                    'role' => $role
+                ]);
+        }   else if($role == 'coordinator'){
+            return Inertia::render('Coordinator', [
+                'role' => $role
+            ]);
+        }   
     }
 
     public function bookmark()

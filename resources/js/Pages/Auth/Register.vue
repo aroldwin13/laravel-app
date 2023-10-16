@@ -9,8 +9,10 @@ import ValidationErrors from '@/Components/ValidationErrors.vue'
 import Button from '@/Components/Button.vue'
 
 const form = useForm({
-    name: '',
-    email: '',
+    firstname: '',
+    surname: '',
+    college: '',
+    role: '',
     password: '',
     password_confirmation: '',
     terms: false,
@@ -30,24 +32,43 @@ const submit = () => {
         <form @submit.prevent="submit">
             <div class="grid gap-6">
                 <div class="space-y-2">
-                    <Label for="name" value="Name" />
+                    <Label for="firstname" value="Firstname" />
                     <InputIconWrapper>
                         <template #icon>
                             <UserIcon aria-hidden="true" class="w-5 h-5" />
                         </template>
-                        <Input withIcon id="name" type="text" placeholder="Name" class="block w-full" v-model="form.name" required autofocus autocomplete="name" />
+                        <Input withIcon id="firstname" type="text" placeholder="firstname" class="block w-full" v-model="form.firstname" required autofocus autocomplete="firstname" />
+                    </InputIconWrapper>
+                </div>
+                <div class="space-y-2">
+                    <Label for="surname" value="Surname" />
+                    <InputIconWrapper>
+                        <template #icon>
+                            <UserIcon aria-hidden="true" class="w-5 h-5" />
+                        </template>
+                        <Input withIcon id="surname" type="text" placeholder="surname" class="block w-full" v-model="form.surname" required autofocus autocomplete="surname" />
+                    </InputIconWrapper>
+                </div>
+                <div class="space-y-2">
+                    <Label for="college" value="College" />
+                    <InputIconWrapper>
+                        <template #icon>
+                            <UserIcon aria-hidden="true" class="w-5 h-5" />
+                        </template>
+                        <Input withIcon id="college" type="text" placeholder="college" class="block w-full" v-model="form.college" required autofocus autocomplete="college" />
+                    </InputIconWrapper>
+                </div>
+                <div class="space-y-2">
+                    <Label for="role" value="Role" />
+                    <InputIconWrapper>
+                        <template #icon>
+                            <UserIcon aria-hidden="true" class="w-5 h-5" />
+                        </template>
+                        <Input withIcon id="role" type="text" placeholder="role" class="block w-full" v-model="form.role" required autofocus autocomplete="role" />
                     </InputIconWrapper>
                 </div>
 
-                <div class="space-y-2">
-                    <Label for="email" value="Email" />
-                    <InputIconWrapper>
-                        <template #icon>
-                            <MailIcon aria-hidden="true" class="w-5 h-5" />
-                        </template>
-                        <Input withIcon id="email" type="email" class="block w-full" placeholder="Email" v-model="form.email" required autocomplete="username" />
-                    </InputIconWrapper>
-                </div>
+       
 
                 <div class="space-y-2">
                     <Label for="password" value="Password" />
