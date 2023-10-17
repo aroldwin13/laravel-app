@@ -7,80 +7,79 @@ use Inertia\Inertia;
 use App\Models\Submission;
 use Illuminate\Http\Request;
 
-use App\Http\Controllers\BlogController;
 
 
 class BlogController extends Controller
 {
-      public function show()
+    public function show()
     {
-        return Inertia::render('Submission');    
+        return Inertia::render('Submission');
     }
-    public function editor(){
+    public function editor()
+    {
         return Inertia::render('Editor');
     }
     public function assessment()
     {
-        return Inertia::render('Assessment');    
+        return Inertia::render('Assessment');
     }
 
     public function generate()
     {
-        return Inertia::render('Generate');    
+        return Inertia::render('Generate');
     }
 
     public function account()
     {
-        return Inertia::render('Account');    
+        return Inertia::render('Account');
     }
- 
+
     public function home()
     {
         // kastuy pinagala jay role
-        
+
         $role = Auth::user()->role;
-        if($role == 'admin'){
-            return Inertia::render('Admin', [
+        if ($role == 'admin') {
+            return Inertia::render('Home', [
                 'role' => $role
             ]);
-        } else if($role == 'student'){
-            return Inertia::render('Student', [
+        } else if ($role == 'student') {
+            return Inertia::render('Home', [
                 'role' => $role
             ]);
-        }  else if($role == 'faculty'){
-            return Inertia::render('Faculty', [
+        } else if ($role == 'faculty') {
+            return Inertia::render('Home', [
                 'role' => $role
             ]);
-        }   
-            else if($role == 'librarian'){
-                return Inertia::render('Librarian', [
-                    'role' => $role
-                ]);
-        }   else if($role == 'coordinator'){
-            return Inertia::render('Coordinator', [
+        } else if ($role == 'librarian') {
+            return Inertia::render('Home', [
                 'role' => $role
             ]);
-        }   
+        } else if ($role == 'coordinator') {
+            return Inertia::render('Home', [
+                'role' => $role
+            ]);
+        }
     }
 
     public function bookmark()
     {
-        return Inertia::render('Bookmark');    
+        return Inertia::render('Bookmark');
     }
-    
+
     public function references()
     {
-        return Inertia::render('References');    
+        return Inertia::render('References');
     }
-    
+
     public function library()
     {
         return Inertia::render('Library');
     }
-   
+
 
     public function submission()
-    {   
+    {
         $submissions = Submission::all();
 
         return Inertia::render('Submission', [
@@ -100,7 +99,7 @@ class BlogController extends Controller
             'title' => 'required|string|max:255',
             'shortabs' => 'required|string',
         ]);
-     
+
         Submission::create($validatedData);
 
         return redirect()->route('submission')->with('success', 'Submission created successfully!');
@@ -127,7 +126,7 @@ class BlogController extends Controller
         return redirect()->route('submission')->with('message', 'Submission Updated Successfully');
     }
 
- 
+
     public function destroy(Submission $submission)
     {
         $submission->delete();

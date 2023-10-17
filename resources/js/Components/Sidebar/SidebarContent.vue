@@ -1,23 +1,34 @@
 <script setup>
-import PerfectScrollbar from '@/Components/PerfectScrollbar.vue'
-import SidebarLink from '@/Components/Sidebar/SidebarLink.vue'
-import { BookmarkIcon } from '@/Components/Icons/outline'
-import { ReferencesIcon } from '@/Components/Icons/outline'
-import SidebarCollapsible from '@/Components/Sidebar/SidebarCollapsible.vue'
-import SidebarCollapsibleItem from '@/Components/Sidebar/SidebarCollapsibleItem.vue'
-
+import PerfectScrollbar from "@/Components/PerfectScrollbar.vue";
+import SidebarLink from "@/Components/Sidebar/SidebarLink.vue";
+import { BookmarkIcon } from "@/Components/Icons/outline";
+import { ReferencesIcon } from "@/Components/Icons/outline";
+import SidebarCollapsible from "@/Components/Sidebar/SidebarCollapsible.vue";
+import SidebarCollapsibleItem from "@/Components/Sidebar/SidebarCollapsibleItem.vue";
 </script>
 
 <template>
-    <PerfectScrollbar tagname="nav" aria-label="main" class="relative flex flex-col flex-1 max-h-full gap-4 px-3">
-        <SidebarCollapsible title="Category: AI" :active="route().current('bookmark')">
+    <PerfectScrollbar
+        tagname="nav"
+        aria-label="main"
+        class="relative flex flex-col flex-1 max-h-full gap-4 px-1"
+    >
+        <SidebarCollapsible
+            title="Category: AI"
+            :active="route().current('bookmark')"
+        >
             <template #icon>
-                <BookmarkIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+                <BookmarkIcon
+                    class="flex-shrink-0 w-10 h-10"
+                    aria-hidden="true"
+                />
             </template>
-            
 
-            <SidebarCollapsibleItem :href="route('bookmark')" title="Title: Research Index and abstracting System"
-                :active="route().current('bookmark')" />
+            <SidebarCollapsibleItem
+                :href="route('bookmark')"
+                title="Title: Research Index and abstracting System"
+                :active="route().current('bookmark')"
+            />
         </SidebarCollapsible>
 
         <!-- <SidebarCollapsible title="References" :active="route().current('references')">
@@ -32,8 +43,6 @@ import SidebarCollapsibleItem from '@/Components/Sidebar/SidebarCollapsibleItem.
             <SidebarCollapsibleItem :href="route('references')" title="Laplante, J. P., & Nolin, C. (2014). Consultas and socially responsible investing in Guatemala: A case study examining Maya perspectives on the Indigenous right to free, prior, and informed consent. Society & Natural Resources, 27, 231–248"
                 :active="route().current('references')" />
         </SidebarCollapsible> -->
-
-
 
         <!-- <SidebarLink title="Dashboard" :href="route('dashboard')" :active="route().current('dashboard')">
             <template #icon>

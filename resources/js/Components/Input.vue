@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref } from "vue";
 
 defineProps({
     modelValue: String,
@@ -7,24 +7,24 @@ defineProps({
         type: Boolean,
         default: false,
     },
-})
+});
 
-defineEmits(['update:modelValue'])
+defineEmits(["update:modelValue"]);
 
-const input = ref(null)
+const input = ref(null);
 
-const focus = () => input.value?.focus()
+const focus = () => input.value?.focus();
 
 defineExpose({
     input,
-    focus
-})
+    focus,
+});
 
 onMounted(() => {
-    if (input.value.hasAttribute('autofocus')) {
-        input.value.focus()
+    if (input.value.hasAttribute("autofocus")) {
+        input.value.focus();
     }
-})
+});
 </script>
 
 <template>

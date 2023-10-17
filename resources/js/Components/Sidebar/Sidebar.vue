@@ -1,20 +1,20 @@
 <script setup>
-import { onMounted } from 'vue'
-import { Inertia } from '@inertiajs/inertia'
-import { sidebarState } from '@/Composables'
-import SidebarHeader from '@/Components/Sidebar/SidebarHeader.vue'
-import SidebarContent from '@/Components/Sidebar/SidebarContent.vue'
-import SidebarFooter from '@/Components/Sidebar/SidebarFooter.vue'
+import { onMounted } from "vue";
+import { Inertia } from "@inertiajs/inertia";
+import { sidebarState } from "@/Composables";
+import SidebarHeader from "@/Components/Sidebar/SidebarHeader.vue";
+import SidebarContent from "@/Components/Sidebar/SidebarContent.vue";
+import SidebarFooter from "@/Components/Sidebar/SidebarFooter.vue";
 
 onMounted(() => {
-    window.addEventListener('resize', sidebarState.handleWindowResize)
+    window.addEventListener("resize", sidebarState.handleWindowResize);
 
-    Inertia.on('navigate', () => {
+    Inertia.on("navigate", () => {
         if (window.innerWidth <= 1024) {
-            sidebarState.isOpen = false
+            sidebarState.isOpen = false;
         }
-    })
-})
+    });
+});
 </script>
 
 <template>
@@ -39,12 +39,14 @@ onMounted(() => {
             transition-duration: 150ms;
         "
         :class="[
-        'fixed top-40 right-0 inset-y-30 z-20 py-0 flex flex-col space-y-0 bg-white shadow-lg dark:bg-dark-eval-1',
-        {
-            'translate-x-0 w-80': sidebarState.isOpen || sidebarState.isHovered, // Change width to 96 (or any desired value)
-            '-translate-x-full w-80 md:w-16 md:translate-x-0': !sidebarState.isOpen && !sidebarState.isHovered, // Change width to 96 (or any desired value)
-        },
-    ]"
+            'fixed top-40 right-0 inset-y-30 z-20 py-0 flex flex-col space-y-0 bg-white shadow-lg dark:bg-dark-eval-1 rounded-xl',
+            {
+                'translate-x-0 w-80':
+                    sidebarState.isOpen || sidebarState.isHovered, // Change width to 96 (or any desired value)
+                '-translate-x-full w-80 md:w-16 md:translate-x-0':
+                    !sidebarState.isOpen && !sidebarState.isHovered, // Change width to 96 (or any desired value)
+            },
+        ]"
         @mouseenter="sidebarState.handleHover(true)"
         @mouseleave="sidebarState.handleHover(false)"
     >

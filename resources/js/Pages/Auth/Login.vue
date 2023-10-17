@@ -1,39 +1,35 @@
 <script setup>
-import { Link, useForm } from '@inertiajs/inertia-vue3'
-import { MailIcon, LockClosedIcon } from '@heroicons/vue/outline'
-import InputIconWrapper from '@/Components/InputIconWrapper.vue'
-import Button from '@/Components/Button.vue'
-import Checkbox from '@/Components/Checkbox.vue'
-import GuestLayout from '@/Layouts/Guest.vue'
-import Input from '@/Components/Input.vue'
-import Label from '@/Components/Label.vue'
-import ValidationErrors from '@/Components/ValidationErrors.vue'
-import { Inertia } from '@inertiajs/inertia';
-import { MyCustomLoginIcon } from '@/Components/Icons/outline';
+import { Link, useForm } from "@inertiajs/inertia-vue3";
+import { MailIcon, LockClosedIcon } from "@heroicons/vue/outline";
+import InputIconWrapper from "@/Components/InputIconWrapper.vue";
+import Button from "@/Components/Button.vue";
+import Checkbox from "@/Components/Checkbox.vue";
+import GuestLayout from "@/Layouts/Guest.vue";
+import Input from "@/Components/Input.vue";
+import Label from "@/Components/Label.vue";
+import ValidationErrors from "@/Components/ValidationErrors.vue";
+import { Inertia } from "@inertiajs/inertia";
+import { MyCustomLoginIcon } from "@/Components/Icons/outline";
 
 defineProps({
     canResetPassword: Boolean,
     status: String,
-})
+});
 
 const form = useForm({
-    firstname: '',
-    password: '',
-    remember: false
-})
+    firstname: "",
+    password: "",
+    remember: false,
+});
 
 const submit = () => {
-    form.post(route('login'), {
+    form.post(route("login"), {
         onFinish: () => {
             // Reset the password field
-            form.reset('password');
-
-            // Redirect to the home page
-            Inertia.visit('/home');
-        }
+            form.reset("password");
+        },
     });
-}
-
+};
 </script>
 
 <template>
@@ -52,8 +48,17 @@ const submit = () => {
                         <template #icon>
                             <MailIcon aria-hidden="true" class="w-5 h-5" />
                         </template>
-                        <Input withIcon id="firstname" type="firstname" class="block w-full border border-gray-300 rounded-md px-3 py-2"
-                            placeholder="Firstname" v-model="form.firstname" required autofocus autocomplete="firstname" />
+                        <Input
+                            withIcon
+                            id="firstname"
+                            type="firstname"
+                            class="block w-full border border-gray-300 rounded-md px-3 py-2"
+                            placeholder="Firstname"
+                            v-model="form.firstname"
+                            required
+                            autofocus
+                            autocomplete="firstname"
+                        />
                     </InputIconWrapper>
                 </div>
 
@@ -61,37 +66,66 @@ const submit = () => {
                     <Label for="password" value="Password" />
                     <InputIconWrapper>
                         <template #icon>
-                            <LockClosedIcon aria-hidden="true" class="w-5 h-5" />
+                            <LockClosedIcon
+                                aria-hidden="true"
+                                class="w-5 h-5"
+                            />
                         </template>
-                        <Input withIcon id="password" type="password" class="block w-full" placeholder="Password"
-                            v-model="form.password" required autocomplete="current-password" />
+                        <Input
+                            withIcon
+                            id="password"
+                            type="password"
+                            class="block w-full"
+                            placeholder="Password"
+                            v-model="form.password"
+                            required
+                            autocomplete="current-password"
+                        />
                     </InputIconWrapper>
                 </div>
 
                 <div class="flex items-center justify-between">
                     <label class="flex items-center">
-                        <Checkbox name="remember" v-model:checked="form.remember" />
-                        <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                        <Checkbox
+                            name="remember"
+                            v-model:checked="form.remember"
+                        />
+                        <span class="ml-2 text-sm text-gray-600"
+                            >Remember me</span
+                        >
                     </label>
 
-                    <Link v-if="canResetPassword" :href="route('password.request')"
-                        class="text-sm text-blue-500 hover:underline">
-                    Forgot your password?
+                    <Link
+                        v-if="canResetPassword"
+                        :href="route('password.request')"
+                        class="text-sm text-blue-500 hover:underline"
+                    >
+                        Forgot your password?
                     </Link>
                 </div>
 
                 <div>
-                    <Button class="justify-center w-full gap-2" :disabled="form.processing" v-slot="{ iconSizeClasses }">
+                    <Button
+                        class="justify-center w-full gap-2"
+                        :disabled="form.processing"
+                        v-slot="{ iconSizeClasses }"
+                    >
                         <span>Log in</span>
-                            <MyCustomLoginIcon aria-hidden="true" :class="iconSizeClasses" />
+                        <MyCustomLoginIcon
+                            aria-hidden="true"
+                            :class="iconSizeClasses"
+                        />
                     </Button>
                 </div>
-                
+
                 <p class="text-sm text-gray-600 dark:text-gray-400">
-                    <!-- Don't have an account?
-                    <Link :href="route('register')" class="text-blue-500 hover:underline">
-                    Register
-                    </Link> -->
+                    Don't have an account?
+                    <Link
+                        :href="route('register')"
+                        class="text-blue-500 hover:underline"
+                    >
+                        Register
+                    </Link>
                 </p>
             </div>
         </form>

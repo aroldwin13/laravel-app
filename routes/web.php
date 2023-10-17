@@ -50,11 +50,7 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('/editor', [BlogController::class, 'editor'])->name('editor');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/faculty_Home', [FacultyController::class, 'faculty_Home'])->name('faculty_Home');
-    Route::get('/faculty_Bookmark', [FacultyController::class, 'faculty_Bookmark'])->name('faculty_Bookmark');
-    Route::get('/faculty_References', [FacultyController::class, 'faculty_References'])->name('faculty_References');
-});
+
 
 
 Route::middleware('auth')->group(function () {

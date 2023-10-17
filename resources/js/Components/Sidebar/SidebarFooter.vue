@@ -1,7 +1,10 @@
 <script setup>
-import Button from '@/Components/Button.vue'
-import { MenuFoldLineLeftIcon, MenuFoldLineRightIcon } from '@/Components/Icons/outline'
-import { sidebarState } from '@/Composables'
+import Button from "@/Components/Button.vue";
+import {
+    MenuFoldLineLeftIcon,
+    MenuFoldLineRightIcon,
+} from "@/Components/Icons/outline";
+import { sidebarState } from "@/Composables";
 </script>
 
 <template>
@@ -18,12 +21,14 @@ import { sidebarState } from '@/Composables'
             <MenuFoldLineLeftIcon
                 aria-hidden="true"
                 v-show="sidebarState.isOpen"
-                :class="[iconSizeClasses]" />
+                :class="[iconSizeClasses]"
+            />
 
             <MenuFoldLineRightIcon
                 aria-hidden="true"
                 v-show="!sidebarState.isOpen"
-                :class="[iconSizeClasses]" />
+                :class="[iconSizeClasses]"
+            />
         </Button>
     </div>
 </template>

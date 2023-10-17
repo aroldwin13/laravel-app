@@ -1,24 +1,32 @@
 <script setup>
-import { toRefs, computed } from 'vue'
-import { Link } from '@inertiajs/inertia-vue3'
+import { toRefs, computed } from "vue";
+import { Link } from "@inertiajs/inertia-vue3";
 
 const props = defineProps({
     variant: {
         type: String,
-        default: 'primary',
+        default: "primary",
         validator(value) {
-            return ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'black'].includes(value)
+            return [
+                "primary",
+                "secondary",
+                "success",
+                "danger",
+                "warning",
+                "info",
+                "black",
+            ].includes(value);
         },
     },
     type: {
         type: String,
-        default: 'submit',
+        default: "submit",
     },
     size: {
         type: String,
-        default: 'base',
+        default: "base",
         validator(value) {
-            return ['sm', 'base', 'lg'].includes(value)
+            return ["sm", "base", "lg"].includes(value);
         },
     },
     squared: {
@@ -47,76 +55,88 @@ const props = defineProps({
     external: {
         type: Boolean,
         default: false,
-    }
-})
+    },
+});
 
-const emit = defineEmits(['click'])
+const emit = defineEmits(["click"]);
 
-const { type, variant, size, squared, pill, href, iconOnly, srText, external } = props
+const { type, variant, size, squared, pill, href, iconOnly, srText, external } =
+    props;
 
-const { disabled } = toRefs(props)
+const { disabled } = toRefs(props);
 
 const baseClasses = [
-    'inline-flex items-center transition-colors font-medium select-none disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-dark-eval-2',
-]
+    "inline-flex items-center transition-colors font-medium select-none disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-dark-eval-2",
+];
 
 const variantClasses = (variant) => ({
-    'bg-mmsu-color text-white hover:bg-mmsu-color focus:ring-green-900': variant == 'primary',
-    'bg-white-500  hover:bg-gray-500 text-white hover:bg-white-500 focus:ring-mmsu-color dark:text-gray-400 dark:bg-dark-eval-1 dark:hover:bg-dark-eval-2 dark:hover:text-gray-200':
-        variant == 'secondary',
-    'bg-mmsu-color text-white hover:bg-green-600 focus:ring-mmsu-color': variant == 'success',
-    'bg-red-500 text-white hover:bg-red-600 focus:ring-red-500': variant == 'danger',
-    'bg-yellow-500 text-white hover:bg-yellow-600 focus:ring-yellow-500': variant == 'warning',
-    'bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-500': variant === 'info',
-    'bg-black text-gray-300 hover:text-white hover:bg-gray-800 focus:ring-black dark:hover:bg-dark-eval-3':
-        variant == 'black',
-})
+    "bg-mmsu-color text-white hover:bg-mmsu-color focus:ring-green-900":
+        variant == "primary",
+    "bg-white-500  hover:bg-gray-500 text-gray hover:bg-white-500 focus:ring-mmsu-color dark:text-gray-400 dark:bg-dark-eval-1 dark:hover:bg-dark-eval-2 dark:hover:text-gray-200":
+        variant == "secondary",
+    "bg-mmsu-color text-white hover:bg-green-600 focus:ring-mmsu-color":
+        variant == "success",
+    "bg-red-500 text-white hover:bg-red-600 focus:ring-red-500":
+        variant == "danger",
+    "bg-yellow-500 text-white hover:bg-yellow-600 focus:ring-yellow-500":
+        variant == "warning",
+    "bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-500":
+        variant === "info",
+    "bg-black text-gray-300 hover:text-white hover:bg-gray-800 focus:ring-black dark:hover:bg-dark-eval-3":
+        variant == "black",
+});
 
 const classes = computed(() => [
     ...baseClasses,
     iconOnly
         ? {
-            'p-1.5': size == 'sm',
-            'p-2': size == 'base',
-            'p-3': size == 'lg',
-        }
+              "p-1.5": size == "sm",
+              "p-2": size == "base",
+              "p-3": size == "lg",
+          }
         : {
-            'px-2.5 py-1.5 text-sm': size == 'sm',
-            'px-4 py-2 text-base': size == 'base',
-            'px-5 py-2 text-xl': size == 'lg',
-        },
+              "px-2.5 py-1.5 text-sm": size == "sm",
+              "px-4 py-2 text-base": size == "base",
+              "px-5 py-2 text-xl": size == "lg",
+          },
     variantClasses(variant),
     {
-        'rounded-md': !squared && !pill,
-        'rounded-full': pill,
+        "rounded-md": !squared && !pill,
+        "rounded-full": pill,
     },
     {
-        'pointer-events-none opacity-50': href && disabled.value,
+        "pointer-events-none opacity-50": href && disabled.value,
     },
-])
+]);
 
 const iconSizeClasses = [
     {
-        'w-5 h-5': size == 'sm',
-        'w-6 h-6': size == 'base',
-        'w-7 h-7': size == 'lg',
+        "w-5 h-5": size == "sm",
+        "w-6 h-6": size == "base",
+        "w-7 h-7": size == "lg",
     },
-]
+];
 
 const handleClick = (e) => {
     if (disabled.value) {
-        e.preventDefault()
-        e.stopPropagation()
-        return
+        e.preventDefault();
+        e.stopPropagation();
+        return;
     }
-    emit('click', e)
-}
+    emit("click", e);
+};
 
-const Tag = external ? 'a' : Link
+const Tag = external ? "a" : Link;
 </script>
 
 <template>
-    <component :is="Tag" v-if="href" :href="!disabled ? href : null" :class="classes" :aria-disabled="disabled.toString()">
+    <component
+        :is="Tag"
+        v-if="href"
+        :href="!disabled ? href : null"
+        :class="classes"
+        :aria-disabled="disabled.toString()"
+    >
         <span v-if="srText" class="sr-only">
             {{ srText }}
         </span>
@@ -124,7 +144,13 @@ const Tag = external ? 'a' : Link
         <slot :iconSizeClasses="iconSizeClasses" />
     </component>
 
-    <button v-else :type="type" :class="classes" @click="handleClick" :disabled="disabled">
+    <button
+        v-else
+        :type="type"
+        :class="classes"
+        @click="handleClick"
+        :disabled="disabled"
+    >
         <span v-if="srText" class="sr-only">
             {{ srText }}
         </span>

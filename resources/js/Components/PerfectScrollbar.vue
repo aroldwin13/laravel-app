@@ -1,6 +1,6 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
-import PerfectScrollbar from 'perfect-scrollbar'
+import { onMounted, onUnmounted, ref } from "vue";
+import PerfectScrollbar from "perfect-scrollbar";
 
 const props = defineProps({
     settings: {
@@ -9,37 +9,33 @@ const props = defineProps({
     },
     tagname: {
         type: String,
-        default: 'div',
-    }
-})
+        default: "div",
+    },
+});
 
-const { settings, tagname } = props
+const { settings, tagname } = props;
 
-let ps = null
+let ps = null;
 
 const update = () => {
     if (ps) {
-        ps.update()
+        ps.update();
     }
-}
+};
 
-const el = ref(null)
+const el = ref(null);
 
 onMounted(() => {
-    ps = new PerfectScrollbar(el.value, settings)
-})
+    ps = new PerfectScrollbar(el.value, settings);
+});
 
 onUnmounted(() => {
-    ps.destroy()
-})
+    ps.destroy();
+});
 </script>
 
 <template>
-    <component
-        :is="tagname"
-        ref="el"
-        @mouseover.once="update"
-    >
+    <component :is="tagname" ref="el" @mouseover.once="update">
         <slot />
     </component>
 </template>

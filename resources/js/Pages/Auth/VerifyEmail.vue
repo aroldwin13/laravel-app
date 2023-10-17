@@ -1,20 +1,22 @@
 <script setup>
-import { computed } from 'vue'
-import { Link, useForm } from '@inertiajs/inertia-vue3'
-import GuestLayout from '@/Layouts/Guest.vue'
-import Button from '@/Components/Button.vue'
+import { computed } from "vue";
+import { Link, useForm } from "@inertiajs/inertia-vue3";
+import GuestLayout from "@/Layouts/Guest.vue";
+import Button from "@/Components/Button.vue";
 
 const props = defineProps({
-    status: String
-})
+    status: String,
+});
 
-const form = useForm()
+const form = useForm();
 
 const submit = () => {
-    form.post(route('verification.send'))
-}
+    form.post(route("verification.send"));
+};
 
-const verificationLinkSent = computed(() => props.status === 'verification-link-sent')
+const verificationLinkSent = computed(
+    () => props.status === "verification-link-sent"
+);
 </script>
 
 <template>
@@ -29,8 +31,8 @@ const verificationLinkSent = computed(() => props.status === 'verification-link-
             class="mb-4 text-sm font-medium text-green-600"
             v-if="verificationLinkSent"
         >
-            A new verification link has been sent to the email address you provided
-            during registration.
+            A new verification link has been sent to the email address you
+            provided during registration.
         </div>
 
         <form @submit.prevent="submit">
