@@ -569,11 +569,12 @@ const submit = async () => {
 </template>
 
 <script>
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import ClassicEditor from "../../../public/js/ckeditor5-custom-Classic";
 
 export default {
     name: "app",
     component: { ClassicEditor },
+    props: [],
     data() {
         return {
             editor: ClassicEditor,
