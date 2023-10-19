@@ -3,7 +3,7 @@ import AuthenticatedLayout from "@/Layouts/Authenticated.vue";
 
 import Button from "@/Components/Button.vue";
 
-import TextInput from "@/Components/Input.vue";
+import Input from "@/Components/Input.vue";
 import PrimaryButton from "@/Components/Button.vue";
 import Label from "@/Components/Label.vue";
 import InputError from "@/Components/InputError.vue";
@@ -178,203 +178,192 @@ const submit = async () => {
 
                 <div v-show="step2 == true">
                     <div class="p-6 bg-white border-b border-gray-200">
-                        <form @submit.prevent="submit">
-                            <div class="grid grid-cols-2 gap-2">
-                                <!-- Title formv and Adviser -->
-                                <div class="mt-4">
-                                    <label
-                                        for="title"
-                                        class="block text-sm font-medium text-gray-700"
-                                        >Title</label
-                                    >
-                                    <input
-                                        id="title"
-                                        type="text"
-                                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                        v-model="form.title"
-                                    />
-                                    <p
-                                        class="mt-1 text-sm text-red-600"
-                                        v-if="form.errors.title"
-                                    >
-                                        {{ form.errors.title }}
-                                    </p>
-                                </div>
-                                <div class="mt-4">
-                                    <label
-                                        for="series"
-                                        class="block text-sm font-medium text-gray-700"
-                                        >Series</label
-                                    >
-                                    <input
-                                        id="series"
-                                        type="text"
-                                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                        v-model="form.series"
-                                    />
-                                    <p
-                                        class="mt-1 text-sm text-red-600"
-                                        v-if="form.errors.series"
-                                    >
-                                        {{ form.errors.series }}
-                                    </p>
-                                </div>
-
-                                <!-- Series_Num and Volume -->
-
-                                <div class="mt-4">
-                                    <label
-                                        for="series_num"
-                                        class="block text-sm font-medium text-gray-700"
-                                        >Series_Num</label
-                                    >
-                                    <input
-                                        id="series_num"
-                                        type="text"
-                                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                        v-model="form.series_num"
-                                    />
-                                    <p
-                                        class="mt-1 text-sm text-red-600"
-                                        v-if="form.errors.series_num"
-                                    >
-                                        {{ form.errors.series_num }}
-                                    </p>
-                                </div>
-
-                                <div class="mt-4">
-                                    <label
-                                        for="volume"
-                                        class="block text-sm font-medium text-gray-700"
-                                        >Volume</label
-                                    >
-                                    <input
-                                        id="volume"
-                                        type="text"
-                                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                        v-model="form.volume"
-                                    />
-                                    <p
-                                        class="mt-1 text-sm text-red-600"
-                                        v-if="form.errors.volume"
-                                    >
-                                        {{ form.errors.volume }}
-                                    </p>
-                                </div>
-
-                                <!-- Num_Volume and Edition -->
-                                <div class="mt-4">
-                                    <label
-                                        for="num_volume"
-                                        class="block text-sm font-medium text-gray-700"
-                                        >Num_Volume</label
-                                    >
-                                    <input
-                                        id="num_volume"
-                                        type="text"
-                                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                        v-model="form.num_volume"
-                                    />
-                                    <p
-                                        class="mt-1 text-sm text-red-600"
-                                        v-if="form.errors.num_volume"
-                                    >
-                                        {{ form.errors.num_volume }}
-                                    </p>
-                                </div>
-
-                                <div class="mt-3">
-                                    <label
-                                        for="edition"
-                                        class="block text-sm font-medium text-gray-700"
-                                        >Edition</label
-                                    >
-                                    <Input
-                                        id="edition"
-                                        v-model="form.edition"
-                                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                    ></Input>
-                                    <p
-                                        class="mt-1 text-sm text-red-600"
-                                        v-if="form.errors.edition"
-                                    >
-                                        {{ form.errors.edition }}
-                                    </p>
-                                </div>
-
-                                <!-- Place and Keywords Publisher -->
-
-                                <div class="mt-4">
-                                    <label
-                                        for="place"
-                                        class="block text-sm font-medium text-gray-700"
-                                        >Place</label
-                                    >
-                                    <Input
-                                        id="place"
-                                        v-model="form.place"
-                                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                    ></Input>
-                                    <p
-                                        class="mt-1 text-sm text-red-600"
-                                        v-if="form.errors.place"
-                                    >
-                                        {{ form.errors.place }}
-                                    </p>
-                                </div>
-
-                                <div class="mt-4">
-                                    <label
-                                        for="place"
-                                        class="block text-sm font-medium text-gray-700"
-                                        >Place</label
-                                    >
-                                    <Input
-                                        id="place"
-                                        v-model="form.place"
-                                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                    ></Input>
-                                    <p
-                                        class="mt-1 text-sm text-red-600"
-                                        v-if="form.errors.place"
-                                    >
-                                        {{ form.errors.place }}
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Short Abstract form -->
+                        <div class="grid grid-cols-2 gap-2">
+                            <!-- Title formv and Adviser -->
                             <div class="mt-4">
                                 <label
-                                    for="shortabs"
+                                    for="title"
                                     class="block text-sm font-medium text-gray-700"
-                                    >Short Abstract</label
+                                    >Title</label
                                 >
-                                <ckeditor
-                                    :editor="editor"
-                                    v-model="form.shortabs"
-                                    :config="editorConfig"
-                                    id="shortabs"
+                                <input
+                                    id="title"
+                                    type="text"
                                     class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                ></ckeditor>
-                                <!-- <textarea id="shortabs" v-model="form.shortabs" class="w-full border border-gray-300 rounded-lg focus:ring-blue-500 focus-border-blue-500 text-gray-900 text-sm" style="width: 645px; height: 300px;"></textarea> -->
+                                    v-model="form.title"
+                                />
                                 <p
                                     class="mt-1 text-sm text-red-600"
-                                    v-if="form.errors.shortabs"
+                                    v-if="form.errors.title"
                                 >
-                                    {{ form.errors.shortabs }}
+                                    {{ form.errors.title }}
                                 </p>
                             </div>
-                            <br />
-                            <!-- Submit form button -->
-                            <!-- <PrimaryButton
-                                type="submit"
-                                style="color: white"
-                                :class="{ 'opacity-25': form.processing }"
-                                :disabled="form.processing"
+                            <div class="mt-4">
+                                <label
+                                    for="series"
+                                    class="block text-sm font-medium text-gray-700"
+                                    >Series</label
+                                >
+                                <input
+                                    id="series"
+                                    type="text"
+                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
+                                    v-model="form.series"
+                                />
+                                <p
+                                    class="mt-1 text-sm text-red-600"
+                                    v-if="form.errors.series"
+                                >
+                                    {{ form.errors.series }}
+                                </p>
+                            </div>
+
+                            <!-- Series_Num and Volume -->
+
+                            <div class="mt-4">
+                                <label
+                                    for="series_num"
+                                    class="block text-sm font-medium text-gray-700"
+                                    >Series Number</label
+                                >
+                                <input
+                                    id="series_num"
+                                    type="text"
+                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
+                                    v-model="form.series_num"
+                                />
+                                <p
+                                    class="mt-1 text-sm text-red-600"
+                                    v-if="form.errors.series_num"
+                                >
+                                    {{ form.errors.series_num }}
+                                </p>
+                            </div>
+
+                            <div class="mt-4">
+                                <label
+                                    for="volume"
+                                    class="block text-sm font-medium text-gray-700"
+                                    >Volume</label
+                                >
+                                <input
+                                    id="volume"
+                                    type="text"
+                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
+                                    v-model="form.volume"
+                                />
+                                <p
+                                    class="mt-1 text-sm text-red-600"
+                                    v-if="form.errors.volume"
+                                >
+                                    {{ form.errors.volume }}
+                                </p>
+                            </div>
+
+                            <!-- Num_Volume and Edition -->
+                            <div class="mt-4">
+                                <label
+                                    for="num_volume"
+                                    class="block text-sm font-medium text-gray-700"
+                                    >Number Volume</label
+                                >
+                                <input
+                                    id="num_volume"
+                                    type="text"
+                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
+                                    v-model="form.num_volume"
+                                />
+                                <p
+                                    class="mt-1 text-sm text-red-600"
+                                    v-if="form.errors.num_volume"
+                                >
+                                    {{ form.errors.num_volume }}
+                                </p>
+                            </div>
+
+                            <div class="mt-3">
+                                <label
+                                    for="edition"
+                                    class="block text-sm font-medium text-gray-700"
+                                    >Edition</label
+                                >
+                                <Input
+                                    id="edition"
+                                    v-model="form.edition"
+                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
+                                ></Input>
+                                <p
+                                    class="mt-1 text-sm text-red-600"
+                                    v-if="form.errors.edition"
+                                >
+                                    {{ form.errors.edition }}
+                                </p>
+                            </div>
+
+                            <!-- Place and Keywords Publisher -->
+
+                            <div class="mt-4">
+                                <label
+                                    for="place"
+                                    class="block text-sm font-medium text-gray-700"
+                                    >Place</label
+                                >
+                                <Input
+                                    id="place"
+                                    v-model="form.place"
+                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
+                                ></Input>
+                                <p
+                                    class="mt-1 text-sm text-red-600"
+                                    v-if="form.errors.place"
+                                >
+                                    {{ form.errors.place }}
+                                </p>
+                            </div>
+
+                            <div class="mt-4">
+                                <label
+                                    for="publisher"
+                                    class="block text-sm font-medium text-gray-700"
+                                    >Publisher</label
+                                >
+                                <Input
+                                    id="publisher"
+                                    v-model="form.publisher"
+                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
+                                ></Input>
+                                <p
+                                    class="mt-1 text-sm text-red-600"
+                                    v-if="form.errors.publisher"
+                                >
+                                    {{ form.errors.publisher }}
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Short Abstract form -->
+                        <div class="mt-4">
+                            <label
+                                for="shortabs"
+                                class="block text-sm font-medium text-gray-700"
+                                >Short Abstract</label
                             >
-                                Submit
-                            </PrimaryButton> -->
-                        </form>
+                            <ckeditor
+                                :editor="editor"
+                                v-model="form.shortabs"
+                                :config="editorConfig"
+                                id="shortabs"
+                                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
+                            ></ckeditor>
+                            <!-- <textarea id="shortabs" v-model="form.shortabs" class="w-full border border-gray-300 rounded-lg focus:ring-blue-500 focus-border-blue-500 text-gray-900 text-sm" style="width: 645px; height: 300px;"></textarea> -->
+                            <p
+                                class="mt-1 text-sm text-red-600"
+                                v-if="form.errors.shortabs"
+                            >
+                                {{ form.errors.shortabs }}
+                            </p>
+                        </div>
+                        <br />
                     </div>
                     <div>
                         <Button
@@ -386,11 +375,22 @@ const submit = async () => {
                                 isPhase2Head = false;
                             "
                         >
-                            Back
+                            Previous
                         </Button>
                     </div>
                     <div>
                         <Button
+                            :disabled="
+                                !form.title ||
+                                !form.series ||
+                                !form.series_num ||
+                                !form.volume ||
+                                !form.num_volume ||
+                                !form.edition ||
+                                !form.place ||
+                                !form.publisher ||
+                                !form.shortabs
+                            "
                             variant="success"
                             @click="
                                 step2 = false;
@@ -407,69 +407,68 @@ const submit = async () => {
                 <!-- Contributors -->
 
                 <div v-show="step3 == true">
-                    <form @submit.prevent="submit">
-                        <div class="grid grid-cols-2 gap-2">
-                            <!-- Authors formv and Adviser -->
-                            <div class="mt-4">
-                                <label
-                                    for="authors"
-                                    class="block text-sm font-medium text-gray-700"
-                                    >Authors</label
-                                >
-                                <input
-                                    id="authors"
-                                    type="text"
-                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                    v-model="form.authors"
-                                />
-                                <p
-                                    class="mt-1 text-sm text-red-600"
-                                    v-if="form.errors.authors"
-                                >
-                                    {{ form.errors.authors }}
-                                </p>
-                            </div>
-                            <div class="mt-4">
-                                <label
-                                    for="adviser"
-                                    class="block text-sm font-medium text-gray-700"
-                                    >Adviser</label
-                                >
-                                <input
-                                    id="adviser"
-                                    type="text"
-                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                    v-model="form.adviser"
-                                />
-                                <p
-                                    class="mt-1 text-sm text-red-600"
-                                    v-if="form.errors.adviser"
-                                >
-                                    {{ form.errors.adviser }}
-                                </p>
-                            </div>
-                            <!-- Panels -->
-                            <div class="mt-4">
-                                <label
-                                    for="panels"
-                                    class="block text-sm font-medium text-gray-700"
-                                    >Panels</label
-                                >
-                                <input
-                                    id="panels"
-                                    type="text"
-                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                    v-model="form.panels"
-                                />
-                                <p
-                                    class="mt-1 text-sm text-red-600"
-                                    v-if="form.errors.panels"
-                                >
-                                    {{ form.errors.panels }}
-                                </p>
-                            </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <!-- Authors formv and Adviser -->
+                        <div class="mt-4">
+                            <label
+                                for="authors"
+                                class="block text-sm font-medium text-gray-700"
+                                >Authors</label
+                            >
+                            <input
+                                id="authors"
+                                type="text"
+                                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
+                                v-model="form.authors"
+                            />
+                            <p
+                                class="mt-1 text-sm text-red-600"
+                                v-if="form.errors.authors"
+                            >
+                                {{ form.errors.authors }}
+                            </p>
                         </div>
-                    </form>
+                        <div class="mt-4">
+                            <label
+                                for="adviser"
+                                class="block text-sm font-medium text-gray-700"
+                                >Adviser</label
+                            >
+                            <input
+                                id="adviser"
+                                type="text"
+                                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
+                                v-model="form.adviser"
+                            />
+                            <p
+                                class="mt-1 text-sm text-red-600"
+                                v-if="form.errors.adviser"
+                            >
+                                {{ form.errors.adviser }}
+                            </p>
+                        </div>
+                        <!-- Panels -->
+                        <div class="mt-4">
+                            <label
+                                for="panels"
+                                class="block text-sm font-medium text-gray-700"
+                                >Panels</label
+                            >
+                            <input
+                                id="panels"
+                                type="text"
+                                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
+                                v-model="form.panels"
+                            />
+                            <p
+                                class="mt-1 text-sm text-red-600"
+                                v-if="form.errors.panels"
+                            >
+                                {{ form.errors.panels }}
+                            </p>
+                        </div>
+                    </div>
+
                     <div>
                         <Button
                             variant="info"
@@ -478,13 +477,17 @@ const submit = async () => {
                                 step3 = false;
                                 isPhase2Head = true;
                                 isPhase3Head = false;
+                                disabled = !disabled;
                             "
                         >
-                            Back
+                            Previous
                         </Button>
                     </div>
                     <div>
                         <Button
+                            :disabled="
+                                !form.authors || !form.adviser || !form.panels
+                            "
                             variant="success"
                             @click="
                                 step3 = false;
@@ -497,50 +500,49 @@ const submit = async () => {
                         </Button>
                     </div>
                 </div>
+
                 <div v-show="step4 == true">
                     <div class="p-6 bg-white border-b border-gray-200">
-                        <form @submit.prevent="submit">
-                            <div class="grid grid-cols-2 gap-2">
-                                <!--References and Citations -->
+                        <div class="grid grid-cols-2 gap-2">
+                            <!--References and Citations -->
 
-                                <div class="mt-4">
-                                    <label
-                                        for="references"
-                                        class="block text-sm font-medium text-gray-700"
-                                        >References</label
-                                    >
-                                    <textarea
-                                        id="references"
-                                        v-model="form.references"
-                                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                    ></textarea>
-                                    <p
-                                        class="mt-1 text-sm text-red-600"
-                                        v-if="form.errors.references"
-                                    >
-                                        {{ form.errors.references }}
-                                    </p>
-                                </div>
-                                <div class="mt-3">
-                                    <label
-                                        for="citation"
-                                        class="block text-sm font-medium text-gray-700"
-                                        >Citation</label
-                                    >
-                                    <textarea
-                                        id="citation"
-                                        v-model="form.citation"
-                                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                    ></textarea>
-                                    <p
-                                        class="mt-1 text-sm text-red-600"
-                                        v-if="form.errors.citation"
-                                    >
-                                        {{ form.errors.citation }}
-                                    </p>
-                                </div>
+                            <div class="mt-4">
+                                <label
+                                    for="references"
+                                    class="block text-sm font-medium text-gray-700"
+                                    >References</label
+                                >
+                                <textarea
+                                    id="references"
+                                    v-model="form.references"
+                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
+                                ></textarea>
+                                <p
+                                    class="mt-1 text-sm text-red-600"
+                                    v-if="form.errors.references"
+                                >
+                                    {{ form.errors.references }}
+                                </p>
                             </div>
-                        </form>
+                            <div class="mt-3">
+                                <label
+                                    for="citation"
+                                    class="block text-sm font-medium text-gray-700"
+                                    >Citation</label
+                                >
+                                <textarea
+                                    id="citation"
+                                    v-model="form.citation"
+                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
+                                ></textarea>
+                                <p
+                                    class="mt-1 text-sm text-red-600"
+                                    v-if="form.errors.citation"
+                                >
+                                    {{ form.errors.citation }}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <Button
@@ -552,19 +554,14 @@ const submit = async () => {
                                 isPhase4Head = false;
                             "
                         >
-                            Back
+                            Previous
                         </Button>
                     </div>
 
                     <!-- Submit form button -->
-                    <PrimaryButton
-                        type="submit"
-                        style="color: white"
-                        :class="{ 'opacity-25': form.processing }"
-                        :disabled="form.processing"
-                    >
+                    <Button :disabled="!form.authors || !form.adviser">
                         Submit
-                    </PrimaryButton>
+                    </Button>
                 </div>
             </div>
         </div>
@@ -599,4 +596,3 @@ export default {
     },
 };
 </script>
-<style lang=""></style>

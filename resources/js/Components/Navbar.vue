@@ -56,6 +56,125 @@ async function logout() {
 </script>
 
 <template>
+    <div
+        style="background-color: #d9d9d9; border-bottom: 3px solid #ffcd00"
+        class="[ 'sticky py-0 flex items-center justify-between transition-transform duration-500 dark:bg-dark-eval-1', { '-translate-y-full': scrolling.down, 'translate-y-0': scrolling.up, }, ]"
+    >
+        <Link class="inline-flex items-center gap-5 pl-3 py-3 ml-8">
+            <ApplicationLogo aria-hidden="true" class="w-10 h-auto" />
+            <span class="sidebar-text text-black font-calibri text-xl"
+                >MMSU ARCHIVE SYSTEM</span
+            >
+        </Link>
+
+        <div class="flex items-center gap-4 mr-10">
+            <!-- Search input -->
+            <input
+                v-if="showSearchInput"
+                type="text"
+                placeholder="Search..."
+                class="border border-gray-300 rounded px-2 py-1"
+            />
+
+            <!-- Button to toggle search input -->
+            <Button
+                iconOnly
+                variant="secondary"
+                type="button"
+                v-slot="{ iconSizeClasses }"
+                @click="toggleSearchInput"
+                srText="Search"
+            >
+                <SearchIcon aria-hidden="true" :class="iconSizeClasses" />
+            </Button>
+
+            <!-- Dark mode and light mode toggle -->
+            <Button
+                iconOnly
+                variant="secondary"
+                type="button"
+                @click="toggleDarkMode"
+                v-slot="{ iconSizeClasses }"
+                class="hidden md:inline-flex"
+                srText="Toggle dark mode"
+            >
+                <MoonIcon
+                    v-show="!isDark"
+                    aria-hidden="true"
+                    :class="iconSizeClasses"
+                />
+                <SunIcon
+                    v-show="isDark"
+                    aria-hidden="true"
+                    :class="iconSizeClasses"
+                />
+            </Button>
+
+            <!-- Full screen toggle -->
+            <Button
+                iconOnly
+                variant="secondary"
+                type="button"
+                @click="toggleFullScreen"
+                v-slot="{ iconSizeClasses }"
+                class="hidden md:inline-flex"
+                srText="Toggle dark mode"
+            >
+                <ArrowsExpandIcon
+                    v-show="!isFullscreen"
+                    aria-hidden="true"
+                    :class="iconSizeClasses"
+                />
+                <ArrowsInnerIcon
+                    v-show="isFullscreen"
+                    aria-hidden="true"
+                    :class="iconSizeClasses"
+                />
+            </Button>
+
+            <!-- User profile and name dropdown -->
+            <Dropdown align="right" width="48">
+                <template #trigger>
+                    <span class="inline-flex rounded-md">
+                        <button
+                            type="button"
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-black transition duration-150 ease-in-out border border-transparent rounded-md hover:text-gray-500 focus:outline-none focus:ring-mmsu-color focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:bg-dark-eval-1 dark:text-gray-400 dark:hover:text-gray-200"
+                        >
+                            {{ $page.props.auth.user.firstname }}
+
+                            <svg
+                                class="ml-2 -mr-0.5 h-4 w-4"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"
+                                />
+                            </svg>
+                        </button>
+                    </span>
+                </template>
+
+                <template #content>
+                    <DropdownLink :href="route('profile.edit')">
+                        Profile
+                    </DropdownLink>
+
+                    <DropdownLink
+                        @click="logout"
+                        :href="route('logout')"
+                        method="post"
+                        as="button"
+                    >
+                        Log Out
+                    </DropdownLink>
+                </template>
+            </Dropdown>
+        </div>
+    </div>
     <nav
         aria-label="secondary"
         style="border-bottom: 3px solid #ffcd00"
@@ -67,13 +186,7 @@ async function logout() {
             },
         ]"
     >
-        <div class="flex items-center gap-20">
-            <Link class="inline-flex items-center gap-2 pl-3">
-                <span class="sr-only">K-UI</span>
-                <ApplicationLogo aria-hidden="true" class="w-10 h-auto" />
-                <span class="sidebar-text text-white">MMSU Archive System</span>
-            </Link>
-
+        <div class="flex items-center gap-20 ml-20">
             <div class="flex items-center gap-2">
                 <div>
                     <SidebarLink
@@ -183,113 +296,6 @@ async function logout() {
                     :class="iconSizeClasses"
                 />
             </Button>
-        </div>
-        <div class="flex items-center gap-2">
-            <div class="flex items-center gap-2">
-                <!-- Search input -->
-                <input
-                    v-if="showSearchInput"
-                    type="text"
-                    placeholder="Search..."
-                    class="border border-gray-300 rounded px-2 py-1"
-                />
-
-                <!-- Button to toggle search input -->
-                <Button
-                    iconOnly
-                    variant="secondary"
-                    type="button"
-                    v-slot="{ iconSizeClasses }"
-                    @click="toggleSearchInput"
-                    srText="Search"
-                >
-                    <SearchIcon aria-hidden="true" :class="iconSizeClasses" />
-                </Button>
-            </div>
-
-            <Button
-                iconOnly
-                variant="secondary"
-                type="button"
-                @click="toggleDarkMode"
-                v-slot="{ iconSizeClasses }"
-                class="hidden md:inline-flex"
-                srText="Toggle dark mode"
-            >
-                <MoonIcon
-                    v-show="!isDark"
-                    aria-hidden="true"
-                    :class="iconSizeClasses"
-                />
-                <SunIcon
-                    v-show="isDark"
-                    aria-hidden="true"
-                    :class="iconSizeClasses"
-                />
-            </Button>
-
-            <Button
-                iconOnly
-                variant="secondary"
-                type="button"
-                @click="toggleFullScreen"
-                v-slot="{ iconSizeClasses }"
-                class="hidden md:inline-flex"
-                srText="Toggle dark mode"
-            >
-                <ArrowsExpandIcon
-                    v-show="!isFullscreen"
-                    aria-hidden="true"
-                    :class="iconSizeClasses"
-                />
-                <ArrowsInnerIcon
-                    v-show="isFullscreen"
-                    aria-hidden="true"
-                    :class="iconSizeClasses"
-                />
-            </Button>
-
-            <!-- Dropdwon -->
-            <Dropdown align="right" width="48">
-                <template #trigger>
-                    <span class="inline-flex rounded-md">
-                        <button
-                            type="button"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-mmsu-color border border-transparent rounded-md hover:text-gray -500 focus:outline-none focus:ring-mmsu-color focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:bg-dark-eval-1 dark:text-gray-400 dark:hover:text-gray-200"
-                        >
-                            {{ $page.props.auth.user.firstname }}
-
-                            <svg
-                                class="ml-2 -mr-0.5 h-4 w-4"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"
-                                />
-                            </svg>
-                        </button>
-                    </span>
-                </template>
-
-                <template #content>
-                    <DropdownLink :href="route('profile.edit')">
-                        Profile
-                    </DropdownLink>
-
-                    <DropdownLink
-                        @click="logout"
-                        :href="route('logout')"
-                        method="post"
-                        as="button"
-                    >
-                        Log Out
-                    </DropdownLink>
-                </template>
-            </Dropdown>
         </div>
     </nav>
 
