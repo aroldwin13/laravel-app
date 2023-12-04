@@ -11,7 +11,7 @@ import SidebarCollapsibleItem from "@/Components/Sidebar/SidebarCollapsibleItem.
     <PerfectScrollbar
         tagname="nav"
         aria-label="main"
-        class="relative flex flex-col flex-1 max-h-full gap-4 px-1"
+        class="relative flex flex-col flex-1 max-h-full gap-4"
     >
         <SidebarCollapsible
             title="Category: AI"

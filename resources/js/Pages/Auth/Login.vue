@@ -17,7 +17,7 @@ defineProps({
 });
 
 const form = useForm({
-    firstname: "",
+    email: "",
     password: "",
     remember: false,
 });
@@ -43,21 +43,21 @@ const submit = () => {
         <form @submit.prevent="submit">
             <div class="grid gap-6">
                 <div class="space-y-2">
-                    <Label for="firstname" value="Firstname" />
+                    <Label for="email" value="Email" />
                     <InputIconWrapper>
                         <template #icon>
                             <MailIcon aria-hidden="true" class="w-5 h-5" />
                         </template>
                         <Input
                             withIcon
-                            id="firstname"
-                            type="firstname"
+                            id="email"
+                            type="email"
                             class="block w-full border border-gray-300 rounded-md px-3 py-2"
-                            placeholder="Firstname"
-                            v-model="form.firstname"
+                            placeholder="Email"
+                            v-model="form.email"
                             required
                             autofocus
-                            autocomplete="firstname"
+                            autocomplete="email"
                         />
                     </InputIconWrapper>
                 </div>
@@ -117,16 +117,6 @@ const submit = () => {
                         />
                     </Button>
                 </div>
-
-                <p class="text-sm text-gray-600 dark:text-gray-400">
-                    Don't have an account?
-                    <Link
-                        :href="route('register')"
-                        class="text-blue-500 hover:underline"
-                    >
-                        Register
-                    </Link>
-                </p>
             </div>
         </form>
     </GuestLayout>

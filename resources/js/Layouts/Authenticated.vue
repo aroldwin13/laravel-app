@@ -13,7 +13,7 @@ defineProps({
     <Head :title="title"></Head>
 
     <div
-        class="min-h-screen text-gray-900 bg-gray-100 dark:bg-dark-eval-0 dark:text-gray-100"
+        class="min-h-screen text-gray-900 bg-white-100 dark:bg-dark-eval-0 dark:text-gray-100"
     >
         <!-- Sidebar -->
         <Sidebar />
@@ -33,9 +33,9 @@ defineProps({
 
             <!-- Page Heading -->
             <header v-if="$slots.header">
-                <div class="p-4 sm:p-6">
+                <div class="p-4">
                     <slot name="header" />
-                </div>
+                </div>  
             </header>
 
             <!-- Page Content -->

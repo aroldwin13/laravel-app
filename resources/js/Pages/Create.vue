@@ -4,6 +4,7 @@ import TextInput from "@/Components/Input.vue";
 import PrimaryButton from "@/Components/Button.vue";
 import Label from "@/Components/Label.vue";
 import InputError from "@/Components/InputError.vue";
+import Button from "@/Components/Button.vue";
 
 import { Head, useForm } from "@inertiajs/inertia-vue3";
 
@@ -41,64 +42,29 @@ const submit = async () => {
                 <h2 class="text-xl font-semibold leading-tight">
                     Thesis Submission Form
                 </h2>
-
-                <!-- <Button
-                    external
-                    variant="black"
-                    target="_blank"
-                    class="items-center max-w-xs gap-2"
-                    v-slot="{ iconSizeClasses }"
-                    href="https://github.com/kamona-wd/kui-laravel-breeze"
-                >
-                    <GithubIcon aria-hidden="true" :class="iconSizeClasses" />
-
-                    <span>Star on Github</span>
-                </Button> -->
             </div>
         </template>
 
-        <div
-            class="p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1"
-        >
+        <div class="p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
             <div class="p-6 bg-white border-b border-gray-200">
                 <form @submit.prevent="submit">
                     <div class="grid grid-cols-2 gap-2">
                         <!-- Title formv and Adviser -->
                         <div class="mt-4">
-                            <label
-                                for="title"
-                                class="block text-sm font-medium text-gray-700"
-                                >Title</label
-                            >
-                            <input
-                                id="title"
-                                type="text"
+                            <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                            <input id="title" type="text"
                                 class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                v-model="form.title"
-                            />
-                            <p
-                                class="mt-1 text-sm text-red-600"
-                                v-if="form.errors.title"
-                            >
+                                v-model="form.title" />
+                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.title">
                                 {{ form.errors.title }}
                             </p>
                         </div>
                         <div class="mt-4">
-                            <label
-                                for="adviser"
-                                class="block text-sm font-medium text-gray-700"
-                                >Adviser</label
-                            >
-                            <input
-                                id="adviser"
-                                type="text"
+                            <label for="adviser" class="block text-sm font-medium text-gray-700">Adviser</label>
+                            <input id="adviser" type="text"
                                 class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-mmsu-color focus:border-mmsu-color sm:text-sm"
-                                v-model="form.adviser"
-                            />
-                            <p
-                                class="mt-1 text-sm text-red-600"
-                                v-if="form.errors.adviser"
-                            >
+                                v-model="form.adviser"/>
+                            <p class="mt-1 text-sm text-red-600" v-if="form.errors.adviser">
                                 {{ form.errors.adviser }}
                             </p>
                         </div>
@@ -256,6 +222,12 @@ const submit = async () => {
                     >
                         Submit
                     </PrimaryButton>
+                    <div class="flex justify-end">
+                        <Button variant="success" data-modal-target="defaultModal" data-modal-toggle="defaultModal" @click="openModal" class="block text-white bg-blue-700 hover:bg-blue-800 cursor-pointer">
+                            Create Account
+                        </Button>
+                        <RegistrationModal v-if="isModalOpen" />
+                    </div>
                 </form>
             </div>
         </div>
@@ -270,12 +242,23 @@ export default {
     component: { ClassicEditor },
     data() {
         return {
+            isModalOpen: false, // Initialize it as false to start with the modal closed.
             editor: ClassicEditor,
-            editorData: "<p>Content of the editor.</p>",
+            editorData: "Content of the editor.",
             editorConfig: {
                 // The configuration of the editor.
             },
         };
     },
+    methods: {
+    openModal() {
+      this.isModalOpen = true;
+    },
+    closeModal() {
+      this.isModalOpen = false;
+      window.history.go(0);
+    },
+  },
 };
 </script>
+

@@ -58,13 +58,15 @@ async function logout() {
 <template>
     <div
         style="background-color: #d9d9d9; border-bottom: 3px solid #ffcd00"
-        class="[ 'sticky py-0 flex items-center justify-between transition-transform duration-500 dark:bg-dark-eval-1', { '-translate-y-full': scrolling.down, 'translate-y-0': scrolling.up, }, ]"
+        class="[ 'sticky py-0 flex items-center justify-between transition-transform duration-500 dark:bg-dark-eval-1', 
+        { 
+            '-translate-y-full': scrolling.down, 
+            'translate-y-0': scrolling.up, 
+        },]"
     >
         <Link class="inline-flex items-center gap-5 pl-3 py-3 ml-8">
             <ApplicationLogo aria-hidden="true" class="w-10 h-auto" />
-            <span class="sidebar-text text-black font-calibri text-xl"
-                >MMSU ARCHIVE SYSTEM</span
-            >
+            <span class="sidebar-text text-black font-calibri text-xl">MMSU ARCHIVE SYSTEM</span>
         </Link>
 
         <div class="flex items-center gap-4 mr-10">
@@ -135,13 +137,19 @@ async function logout() {
             <!-- User profile and name dropdown -->
             <Dropdown align="right" width="48">
                 <template #trigger>
-                    <span class="inline-flex rounded-md">
+                    <span class="inline-flex items-center rounded-md">
                         <button
                             type="button"
                             class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-black transition duration-150 ease-in-out border border-transparent rounded-md hover:text-gray-500 focus:outline-none focus:ring-mmsu-color focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:bg-dark-eval-1 dark:text-gray-400 dark:hover:text-gray-200"
                         >
-                            {{ $page.props.auth.user.firstname }}
-
+                            <img
+                                class="h-8 w-8 rounded-full mr-2"
+                                :src="$page.props.auth.user.profile_picture_url"
+                                alt="User Profile Picture"
+                            />
+                
+                            {{ $page.props.auth.user.username }}
+                
                             <svg
                                 class="ml-2 -mr-0.5 h-4 w-4"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -157,6 +165,7 @@ async function logout() {
                         </button>
                     </span>
                 </template>
+                
 
                 <template #content>
                     <DropdownLink :href="route('profile.edit')">
@@ -178,8 +187,7 @@ async function logout() {
     <nav
         aria-label="secondary"
         style="border-bottom: 3px solid #ffcd00"
-        :class="[
-            'sticky top-0 z-10 py-4 bg-mmsu-color flex items-center justify-between transition-transform duration-500 dark:bg-dark-eval-1',
+        :class="['sticky top-0 z-10 py-4 bg-mmsu-color flex items-center justify-between shadow-lg transition-transform duration-500 dark:bg-dark-eval-1',
             {
                 '-translate-y-full': scrolling.down,
                 'translate-y-0': scrolling.up,
@@ -204,8 +212,8 @@ async function logout() {
                 </div>
                 <div
                     v-if="
-                        $page.props.auth.user.role == 'admin' ||
-                        $page.props.auth.user.role == 'student'
+                        $page.props.auth.user.role == 1 ||
+                        $page.props.auth.user.role == 2
                     "
                 >
                     <SidebarLink
@@ -223,8 +231,8 @@ async function logout() {
                 </div>
                 <div
                     v-if="
-                        $page.props.auth.user.role == 'admin' ||
-                        $page.props.auth.user.role == 'coordinator'
+                        $page.props.auth.user.role == 1 ||
+                        $page.props.auth.user.role == 3
                     "
                 >
                     <SidebarLink
@@ -242,8 +250,8 @@ async function logout() {
                 </div>
                 <div
                     v-if="
-                        $page.props.auth.user.role == 'admin' ||
-                        $page.props.auth.user.role == 'librarian'
+                        $page.props.auth.user.role == 1 ||
+                        $page.props.auth.user.role == 5
                     "
                 >
                     <SidebarLink
@@ -259,7 +267,7 @@ async function logout() {
                         </template>
                     </SidebarLink>
                 </div>
-                <div v-if="$page.props.auth.user.role == 'admin'">
+                <div v-if="$page.props.auth.user.role == 1">
                     <SidebarLink
                         title="Account"
                         :href="route('account')"
@@ -278,7 +286,7 @@ async function logout() {
         <div class="flex items-center gap-2">
             <Button
                 iconOnly
-                variant="secondary"
+                vari    ant="secondary"
                 type="button"
                 @click="toggleDarkMode"
                 v-slot="{ iconSizeClasses }"

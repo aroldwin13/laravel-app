@@ -153,14 +153,14 @@ export const ReferencesIcon = defineComponent({
 
 export const MyCustomLoginIcon = defineComponent({
   setup() {
-    return () => <img src="http://127.0.0.1:8000/images/login.png" alt="" />;
+    return () => <img src="images/login.png" alt="" />;
   },
 });
 
 export const AssessmentIcon = defineComponent({
   setup() {
     return () => (
-      <img src="http://127.0.0.1:8000/images/assessmentw.png" alt="" />
+      <img src="/images/assessmentw.png" alt="" />
     );
   },
 });
@@ -168,19 +168,39 @@ export const AssessmentIcon = defineComponent({
 export const GenerateIcon = defineComponent({
   setup() {
     return () => (
-      <img src="http://127.0.0.1:8000/images/generatew.png" alt="" />
+      <img src="/images/generatew.png" alt="" />
     );
   },
 });
 
 export const AccountIcon = defineComponent({
   setup() {
-    return () => <img src="http://127.0.0.1:8000/images/accountw.png" alt="" />;
+    return () => <img src="/images/accountw.png" alt="" />;
   },
 });
 
 export const BookmarkIcon = defineComponent({
   setup() {
-    return () => <img src="http://127.0.0.1:8000/images/bookmark.png" alt="" />;
+    return () => <img src="/images/bookmark.png" alt="" />;
+  },
+});
+export const AddIcon = defineComponent({
+  setup() {
+    return () => <img src="/images/add.png" alt="" />;
+  },
+});
+export const ViewIcon = defineComponent({
+  setup() {
+    return () => <img src="/images/view.png" alt="" />;
+  },
+});
+export const EditIcon = defineComponent({
+  setup() {
+    return () => <img src="/images/edit.png" alt="" />;
+  },
+});
+export const DeleteIcon = defineComponent({
+  setup() {
+    return () => <img src="/images/delete.png" alt="" />;
   },
 });

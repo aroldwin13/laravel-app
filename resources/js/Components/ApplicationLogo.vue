@@ -1,3 +1,3 @@
 <template>
-    <img src="images/mmsulogo.png" alt="Seal Image" />
+    <img src="/images/mmsulogo.png" alt="Seal Image" />
 </template>
